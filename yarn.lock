@@ -7469,25 +7469,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jcg@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "jcg@workspace:."
-  dependencies:
-    "@testing-library/jest-dom": ^5.14.1
-    "@testing-library/react": ^13.0.0
-    "@testing-library/user-event": ^13.2.1
-    "@types/jest": ^27.0.1
-    "@types/node": ^16.7.13
-    "@types/react": ^18.0.0
-    "@types/react-dom": ^18.0.0
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    react-scripts: 5.0.1
-    typescript: ^4.4.2
-    web-vitals: ^2.1.0
-  languageName: unknown
-  linkType: soft
-
 "jest-changed-files@npm:^27.5.1":
   version: 27.5.1
   resolution: "jest-changed-files@npm:27.5.1"
@@ -8879,6 +8860,25 @@ __metadata:
   checksum: 00b8a57df152d4cd0297946320a94b7c3cdf75a46a2247f32f958a8927dea42958177f9b7fdae69fab2e4e033fb3416881af1f5e9055a3e1542888767139e2fb
   languageName: node
   linkType: hard
+
+"my-app@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "my-app@workspace:."
+  dependencies:
+    "@testing-library/jest-dom": ^5.14.1
+    "@testing-library/react": ^13.0.0
+    "@testing-library/user-event": ^13.2.1
+    "@types/jest": ^27.0.1
+    "@types/node": ^16.7.13
+    "@types/react": ^18.0.0
+    "@types/react-dom": ^18.0.0
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    react-scripts: 5.0.1
+    typescript: ^4.4.2
+    web-vitals: ^2.1.0
+  languageName: unknown
+  linkType: soft
 
 "nanoid@npm:^3.3.4":
   version: 3.3.4
