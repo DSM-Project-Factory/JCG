@@ -1,25 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Routes, Route, BrowserRouter} from "react-router-dom";
+import Menu from "./page/Menu";
+import GlobalStyle from "./style/GlobalStyle";
+import FirstChapter from "./page/FirstChapter";
+import All from "./page/All";
+import SecondChapter from "./page/SecondChapter";
+import ThirdChapter from "./page/ThirdChapter";
+import FourthChapter from "./page/FourthChapter";
+import Layout from "./page/Layout";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <BrowserRouter>
+          <Routes>
+              <Route element={<Layout/>}>
+                  <Route path="/" element={<Menu/>}/>
+                  <Route path="/all" element={<All/>}/>
+                  <Route path="/firstChapter" element={<FirstChapter/>}/>
+                  <Route path="/secondChapter" element={<SecondChapter/>}/>
+                  <Route path="/thirdChapter" element={<ThirdChapter/>}/>
+                  <Route path="/FourthChapter" element={<FourthChapter/>}/>
+              </Route>
+          </Routes>
+          <GlobalStyle />
+      </BrowserRouter>
   );
 }
 
