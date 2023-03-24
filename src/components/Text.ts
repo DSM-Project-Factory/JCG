@@ -4,6 +4,7 @@ interface text {
     Weight?: number;
     Size?: number;
     Color?: string;
+    Margin?: string;
 }
 
 export const Text = styled.p<text>`
@@ -11,4 +12,5 @@ export const Text = styled.p<text>`
   font-weight: ${props => props.Weight ?? 400};
   color: ${props => props.Color ?? "white"};
   line-height: 160%;
+  margin: ${props => props.Margin ?? 0};
 `

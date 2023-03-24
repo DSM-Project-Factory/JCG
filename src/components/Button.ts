@@ -24,4 +24,9 @@ export const Button = styled.button<button>`
   border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
+  transition: 0.3s;
+  @media screen and (max-width: 500px) {
+    width: 20px;
+    height: 80px;
+  }
 `

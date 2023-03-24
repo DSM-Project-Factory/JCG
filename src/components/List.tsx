@@ -21,8 +21,8 @@ const ListDiv = styled.div`
   display: flex;
   flex-direction: column;
   height: fit-content;
-  width: 100%;
+  width: fit-content;
   border: 2px solid ${Colors.DarkGray1};
   border-radius: 8px;
-  padding: 40px;
+  padding: 30px;
 `

@@ -11,6 +11,8 @@ const GlobalStyle = createGlobalStyle`
     body {
       font-family: Pretendard, sans-serif;
       color: white;
+      overflow: hidden;
+      line-height: 160%;
     }
 `
 

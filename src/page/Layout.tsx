@@ -15,11 +15,10 @@ export default Layout
 
 const Background = styled.div`
   display: flex;
-  padding: 100px;
-  height: calc(100vh - 200px);
+  padding: 0 4%;
+  height: 100vh;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 40px;
   background-color: ${Colors.DarkGray2};
+  width: calc(100vw - 8%);
 `

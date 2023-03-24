@@ -8,6 +8,7 @@ import SecondChapter from "./page/SecondChapter";
 import ThirdChapter from "./page/ThirdChapter";
 import FourthChapter from "./page/FourthChapter";
 import Layout from "./page/Layout";
+import Result from "./page/Result";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
                   <Route path="/secondChapter" element={<SecondChapter/>}/>
                   <Route path="/thirdChapter" element={<ThirdChapter/>}/>
                   <Route path="/FourthChapter" element={<FourthChapter/>}/>
+                  <Route path="/result" element={<Result/>}/>
               </Route>
           </Routes>
           <GlobalStyle />

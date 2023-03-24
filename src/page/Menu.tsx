@@ -7,7 +7,7 @@ import {Text} from "../components/Text";
 const Menu = () => {
     return (
         <CoverDiv>
-            <Text Size={40} Weight={600}>Jung<br/>Cher<br/>Gi<Text Size={14}>SilGi</Text></Text>
+            <Text Size={40} Weight={600}>Jung<br/>Cher<br/>Gi</Text><Text Size={14}>SilGi</Text>
             <Div><Link to="/all"><Button>모두 풀기</Button></Link></Div>
             <Div><Link to="/firstChapter"><Button>응용 SW 기초 기술 활용 풀기</Button></Link></Div>
             <Div><Link to="/secondChapter"><Button>프로그래밍 언어 활용 풀기</Button></Link></Div>
@@ -21,12 +21,13 @@ export default Menu
 
 const CoverDiv = styled.div`
   width: 100%;
-  gap: 40px;
+  height: 90%;
+  justify-content: space-around;
   display: flex;
   flex-direction: column;
 `
 const Div = styled.div`
-  width: 600px;
+  width: 100%;
 `
 const Button = styled.button`
   width: 100%;
@@ -43,7 +44,7 @@ const Button = styled.button`
   cursor: pointer;
   transition: 0.3s;
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.04);
     box-shadow: rgba(255, 255, 255, 0.1) 0 0 100px;
     border: 1px solid white;
   }
