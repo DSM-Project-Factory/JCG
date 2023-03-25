@@ -1,11 +1,13 @@
 import React, {KeyboardEventHandler, MouseEventHandler, useEffect, useState} from 'react'
 import {Text} from '../components/Text'
-import {FirstData} from "../assets/FirstData";
 import {List} from "../components/List";
 import styled from "styled-components";
 import {Colors} from "../style/Color";
 import {Button} from "../components/Button";
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
+import {FirstData} from "../assets/FirstData";
+import {SecondData} from "../assets/SecondData";
+import {Code} from "../components/Code";
 
 export interface listType {
     id: number;
@@ -14,21 +16,32 @@ export interface listType {
     state: string;
     listData?: string[];
     url?: string;
+    codeData?: string;
+    language?: string;
     result: string[];
 }
 
 export type types = listType[];
 
-const FirstChapter = () => {
+const Chapter = () => {
     const [nowNum, setNowNum] = useState(0);
     const [answer, setAnswer] = useState('');
     const [randomArr, setRandomArr] = useState<listType[]>([]);
     const [collectArr, setCollectArr] = useState<string[]>([]);
     const [answerArr, setAnswerArr] = useState<string[]>([]);
+    const location = useLocation();
     const maxNum = 10;
 
     const makeArr = () => {
-        setRandomArr(FirstData.sort(() => 0.5 - Math.random()));
+        let Data: types;
+        switch (location.pathname) {
+            case "/secondChapter":
+                Data = SecondData;
+                break;
+            default:
+                Data = FirstData;
+        }
+        setRandomArr(Data.sort(() => 0.5 - Math.random()));
         setCollectArr(Array(maxNum).fill(' '));
         setAnswerArr(Array(maxNum).fill(' '));
     }
@@ -63,7 +76,7 @@ const FirstChapter = () => {
     const currentItem = randomArr[nowNum];
 
     return (
-        <Div width='100%' justify="space-around" padding="40px 0">
+        <Div width='100%' justify="space-between" padding="40px 0">
             <Button height="40px" width="120px" background={Colors.DarkGray1} onClick={backClick}>이전 문제</Button>
             {currentItem && (
                 <Div width="460px" flex="column" justify="space-between" padding="0 40px">
@@ -77,13 +90,14 @@ const FirstChapter = () => {
                             <Text>{randomArr[nowNum].problem}</Text>
                             {
                                 randomArr[nowNum].state === "list" ? <List arrProps={randomArr[nowNum].listData || []}/>
-                                    : randomArr[nowNum].state === "img" ? <Img src={randomArr[nowNum].url}/> : null
+                                    : randomArr[nowNum].state === "img" ? <Img src={randomArr[nowNum].url}/>
+                                        : randomArr[nowNum].state === "code" ? <Code language={randomArr[nowNum].language || ""} codeData={randomArr[nowNum].codeData || ""}/> : null
                             }
                         </Div>
                         {collectArr[nowNum] !== ' ' &&
                             <Div height="fit-content" flex="column">
-                                <Text>정답 : {randomArr[nowNum].result.join(" | ")}</Text>
-                                <Text>입력 : {answerArr[nowNum]}</Text>
+                                <Text Color={Colors.Gray}>정답 : {randomArr[nowNum].result.join(" | ")}</Text>
+                                <Text Color={Colors.Gray}>입력 : {answerArr[nowNum]}</Text>
                             </Div>
                         }
                     </Div>
@@ -104,7 +118,7 @@ const FirstChapter = () => {
     )
 }
 
-export default FirstChapter
+export default Chapter
 
 interface div {
     justify?: string;
@@ -135,6 +149,9 @@ const Div = styled.div<div>`
   align-items: ${props => props["align"] ?? "flex-start"};
   padding: ${props => props["padding"] ?? 0};
   transition: 0.3s;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 `
 const Input = styled.input<input>`
   height: fit-content;

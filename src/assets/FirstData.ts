@@ -1,4 +1,4 @@
-import {types} from "../page/FirstChapter";
+import {types} from "../page/Chapter";
 import oneFour from "./image/1-4.png"
 import oneTen from "./image/1-10.png"
 import oneEleven from "./image/1-11.png"
@@ -156,5 +156,77 @@ export const FirstData: types = [
         "state": "text",
         "result": ["ls"]
     },
-
+    {
+        "id": 21,
+        "date": "21년 6월",
+        "problem": "UNIX에서 사용하는 명령어에 대한 다음 설명에서 괄호(①, ②)에 들어갈 알맞은 명령어를 쓰시오.",
+        "state": "list",
+        "listData": ["· ( ① ) : 파일을 삭제하는 명령어이다.", "· ( ② ) : 파일의 사용 권한을 변경할 때 사용하는 명령어이다."],
+        "result": ["rm, chmod"]
+    },
+    {
+        "id": 22,
+        "date": "짠!~ 깜짝놀랬지!~",
+        "problem": "다음 Javascript언어로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오.",
+        "state": "code",
+        "codeData": "const abcd = 1;\nabcd += 120;\nabcd = 500;\nconsole.log(abcd);\nconsole.log('후후...과연 이 글자가 나올까?ssssssssssssssssssssss');",
+        "language": "javascript",
+        "result": [""]
+    },
+    {
+        "id": 23,
+        "date": "",
+        "problem": "",
+        "state": "",
+        "result": [""]
+    },
+    {
+        "id": 24,
+        "date": "",
+        "problem": "",
+        "state": "",
+        "result": [""]
+    },
+    {
+        "id": 25,
+        "date": "",
+        "problem": "",
+        "state": "",
+        "result": [""]
+    },
+    {
+        "id": 26,
+        "date": "",
+        "problem": "",
+        "state": "",
+        "result": [""]
+    },
+    {
+        "id": 27,
+        "date": "",
+        "problem": "",
+        "state": "",
+        "result": [""]
+    },
+    {
+        "id": 28,
+        "date": "",
+        "problem": "",
+        "state": "",
+        "result": [""]
+    },
+    {
+        "id": 29,
+        "date": "",
+        "problem": "",
+        "state": "",
+        "result": [""]
+    },
+    {
+        "id": 30,
+        "date": "",
+        "problem": "",
+        "state": "",
+        "result": [""]
+    },
 ]

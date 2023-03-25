@@ -8,7 +8,7 @@ const Menu = () => {
     return (
         <CoverDiv>
             <Text Size={40} Weight={600}>Jung<br/>Cher<br/>Gi</Text><Text Size={14}>SilGi</Text>
-            <Div><Link to="/all"><Button>모두 풀기</Button></Link></Div>
+            <Div><Link to="/all"><Button>기출 문제 풀기</Button></Link></Div>
             <Div><Link to="/firstChapter"><Button>응용 SW 기초 기술 활용 풀기</Button></Link></Div>
             <Div><Link to="/secondChapter"><Button>프로그래밍 언어 활용 풀기</Button></Link></Div>
             <Div><Link to="/thirdChapter"><Button>애플리케이션 테스트 수행 풀기</Button></Link></Div>

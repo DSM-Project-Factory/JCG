@@ -4,15 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="faf2230a-8df7-4f32-926b-3a87b6f98b3f" name="변경" comment="EDIT Style">
-      <change afterPath="$PROJECT_DIR$/src/assets/image/1-4.png" afterDir="false" />
+    <list default="true" id="faf2230a-8df7-4f32-926b-3a87b6f98b3f" name="변경" comment="ADD Questions">
+      <change afterPath="$PROJECT_DIR$/src/assets/FourthData.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/SecondData.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/ThirdData.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Code.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/FirstData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/FirstData.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/All.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/All.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/FirstChapter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Chapter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/FourthChapter.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/Menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/SecondChapter.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/ThirdChapter.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/Color.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/Color.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/GlobalStyle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/GlobalStyle.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -26,24 +47,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/wjknn/WebstormProjects/JCG&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\wjknn\\WebstormProjects\\JCG\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/wjknn/WebstormProjects/JCG/src/assets",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "C:\\Users\\wjknn\\WebstormProjects\\JCG\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\wjknn\WebstormProjects\JCG\src\assets" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\wjknn\WebstormProjects\JCG\src\assets\image" />
       <recent name="C:\Users\DSM2022\Desktop\WebStormProject\jcg-silgi" />
@@ -81,7 +105,7 @@
       <workItem from="1679657889064" duration="142000" />
       <workItem from="1679658033038" duration="17617000" />
       <workItem from="1679720626811" duration="101000" />
-      <workItem from="1679720738993" duration="4749000" />
+      <workItem from="1679720738993" duration="19232000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1679557259966</created>
@@ -125,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679680324267</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="ADD Questions">
+      <created>1679725588507</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1679725588507</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,6 +179,7 @@
     <MESSAGE value="Start Fix" />
     <MESSAGE value="ADD Show Questions" />
     <MESSAGE value="EDIT Style" />
-    <option name="LAST_COMMIT_MESSAGE" value="EDIT Style" />
+    <MESSAGE value="ADD Questions" />
+    <option name="LAST_COMMIT_MESSAGE" value="ADD Questions" />
   </component>
 </project>
