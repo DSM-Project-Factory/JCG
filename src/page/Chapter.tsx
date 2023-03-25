@@ -79,7 +79,7 @@ const Chapter = () => {
         <Div width='100%' justify="space-between" padding="40px 0">
             <Button height="40px" width="120px" background={Colors.DarkGray1} onClick={backClick}>이전 문제</Button>
             {currentItem && (
-                <Div width="460px" flex="column" justify="space-between" padding="0 40px">
+                <Div width="460px" flex="column" justify="space-between" padding="0 40px" mediaWidth="calc(100% - 120px)">
                     <Div flex="column" gap="20px">
                         <Div height="fit-content" width="fit-content" align="center" gap="20px">
                             <Text Size={40} Weight={900}>{nowNum + 1}/{maxNum}</Text>
@@ -128,6 +128,7 @@ interface div {
     flex?: string;
     gap?: string;
     padding?: string;
+    mediaWidth?: string;
 }
 
 interface input {
@@ -150,7 +151,7 @@ const Div = styled.div<div>`
   padding: ${props => props["padding"] ?? 0};
   transition: 0.3s;
   @media screen and (max-width: 600px) {
-    width: 100%;
+    width: ${props => props.mediaWidth ?? "100%"};
   }
 `
 const Input = styled.input<input>`
