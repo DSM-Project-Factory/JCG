@@ -1,4 +1,8 @@
 import {types} from "../page/FirstChapter";
+import oneFour from "./image/1-4.png"
+import oneTen from "./image/1-10.png"
+import oneEleven from "./image/1-11.png"
+import oneThirteen from "./image/1-13.png"
 
 export const FirstData: types = [
     {
@@ -14,7 +18,7 @@ export const FirstData: types = [
         "date": "20년 8월",
         "problem": "구글(Google) 사의 모바일 컴퓨터용 운영체제(OS) 안드로이드(Android)는 버전 1.1부터 버전 9까지의 모든 코드 네임이 디저트 이름이다. 버전 7이 누가(Nougat), 버전 8이 오레오(Oreo)였다. 그렇다면 버전 9의 코드 네임은 무엇인지 쓰시오.",
         "state": "text",
-        "result": ["pie", "파이"]
+        "result": ["Pie", "파이"]
     },
     {
         "id": 3,
@@ -28,7 +32,7 @@ export const FirstData: types = [
         "date": "이전기출",
         "problem": "컴퓨터 시스템의 구성은 아래 그림과 같은 개념으로 설명될 수 있다. 괄호 안에 들어갈 가장 적합한 프로그램을 쓰시오.",
         "state": "img",
-        "url": "https://media.discordapp.net/attachments/970500837094875227/1088418337228328980/1-4.png",
+        "url": `${oneFour}`,
         "result": ["운영체제", "OS", "Operating System"]
     },
     {
@@ -61,4 +65,96 @@ export const FirstData: types = [
         "listData": ["㉠ Windows", "㉡ LINUX", "㉢ PL/1", "㉣ MS-DOS", "㉤ PASCAL", "㉥ UNIX"],
         "result": ["ㄱ ㄴ ㄹ ㅂ"]
     },
+    {
+        "id": 9,
+        "date": "20년 6월",
+        "problem": "CUI(Command Use Interface)는 명령어를 직접 입력해서 명령을 수행하는 방식으로, DOS에서 주로 사용한다. 반면 마우스로 아이콘이나 메뉴를 선택하여 명령을 수행하는 방식으로 주로 Windows에서 사용하는 인터페이스 방식을 가리키는 용어를 쓰시오.",
+        "state": "text",
+        "result": ["GUI", "Graphic User Interface", "그래픽 사용자 인터페이스"]
+    },
+    {
+        "id": 10,
+        "date": "20년 11월",
+        "problem": "Windows 10의 캡쳐 도구와 비슷한 기능으로, 아래와 같은 화면이 표시되도록 하는 단축키를 쓰시오. (예시: Windows Key + Tab)",
+        "state": "img",
+        "url": `${oneTen}`,
+        "result": ["Windows Key + Shift + S"]
+    },
+    {
+        "id": 11,
+        "date": "20년 8월",
+        "problem": "Windows 10을 사용하는 컴퓨터에서 모니터 두 대를 연결하여 사용 할 때 다음과 같은 메뉴가 표시되도록 하는 단축키를 쓰시오. (예시: Windows Key + Tab)",
+        "state": "img",
+        "url": `${oneEleven}`,
+        "result": ["Windows Key + P"]
+    },
+    {
+        "id": 12,
+        "date": "20년 6월",
+        "problem": '"파일 탐색기" 기능을 수행하기 위한 Windows 10의 단축키를 쓰시오. (예시: Windows Key + Tab)',
+        "state": "text",
+        "result": ["Windows Key + E"]
+    },
+    {
+        "id": 13,
+        "date": "21년 11월",
+        "problem": "다음은 Windows 10에서 작업 표시줄이 ‹그림›과 같을 때, 'Discord'를 실행하기 위한 바로 가기 키이다. 괄호에 들어갈 알맞은 숫자를 쓰시오.",
+        "state": "img",
+        "url": `${oneThirteen}`,
+        "result": ["4"]
+    },
+    {
+        "id": 14,
+        "date": "21년 8월",
+        "problem": "다음은 여러 개의 창을 사용하는 중에 바탕 화면을 보기 위해 모든 창을 최소화하는 바로가기 키이다. 괄호에 들어갈 알맞은 키를 쓰시오.",
+        "state": "list",
+        "listData": ["Windows Key + ( )"],
+        "result": ["D"]
+    },
+    {
+        "id": 15,
+        "date": "21년 4월",
+        "problem": "다음 중 한글 Windows 10에서 현재 활성화된 Window 창을 종료할 때 사용하는 단축키를 쓰시오. (단 [키 목록 보기]에서 찾아 [예시]와 같이 쓰시오.)",
+        "state": "list",
+        "listData": ["[키 목록 보기]", "Ctrl, Alt, Shift, PgUp, PgDn, Home, End, Tab, 숫자 0~9, 알파벳 a~z, A~Z, 기능키 F1~F12, Windows Key, Insert, Delete, [한/영], [한자], ~, !, @, #, $, %, ^, &, *, -, +, (, )", "[예시]", "Windows Key + n"],
+        "result": ["Alt + F4"]
+    },
+    {
+        "id": 16,
+        "date": "21년 4월",
+        "problem": "LINUX 운영체제에 대한 다음 설명에서 괄호(①, ②)에 들어갈 적합한 용어를 쓰시오.",
+        "state": "list",
+        "listData": ["· 사용자는 (①)을 통해 운영체제와 대화를 수행하는데, (①)은 사용자의 명령이 입력되면 이것을 번역하여 명령을 수행하는 명령어 해석기이자, 사용자와 시스템 간의 인터페이스 역할을 담당한다.", "· (②)은 운영체제의 핵심으로, 장치 관리, 프로세스 관리, 프로세스간 통신, 파일 관리 등의 작업을 수행한다. 컴퓨터가 부팅될 때 주기억장치에 적재되며, 프로그램과 하드웨어 간의 인터페이스 역할을 담당한다."],
+        "result": ["쉘, 커널", "Shell, Kernel"]
+    },
+    {
+        "id": 17,
+        "date": "이전기출",
+        "problem": "다음이 설명하는 운영체제(OS)를 쓰시오.",
+        "state": "list",
+        "listData": ["· 1960년대 AT&T Bell 연구소, MIT, General Electric이 공동 개발한 운영체제이다.", "· Time Sharing System을 위해 설계되었다.", "· 대부분 C 언어로 작성되어 있다.", "· Tree 구조의 파일 시스템을 갖는다."],
+        "result": ["UNIX", "유닉스"]
+    },
+    {
+        "id": 18,
+        "date": "이전기출",
+        "problem": "사용자의 명령어를 인식하여 프로그램을 호출하고 명령을 수행하는 명령어 해석기로, 시스템과 사용자 간의 인터페이스를 담당하는 UNIX 시스템의 구성 요소를 쓰시오.",
+        "state": "text",
+        "result": ["쉘", "Shell"]
+    }, {
+        "id": 19,
+        "date": "이전기출",
+        "problem": "다음이 설명하는 운영체제(OS)를 쓰시오.",
+        "state": "list",
+        "listData": ["· 1991년 Linus Torvalds가 UNIX를 기반으로 개발한 운영체제이다.", "· 프로그램 소스 코드가 무료로 공개되어 있기 태문에 프로그래머가 원하는 기능을 추가할 수 있고, 다양한 플랫폼에 설치하여 사용이 가능하며, 재배포가 가능하다."],
+        "result": ["LINUX", "리눅스"]
+    },
+    {
+        "id": 20,
+        "date": "21년 8월",
+        "problem": "영어 'List'에서 파생된 단어로, 리눅스(Linux)에서 파일 목록을 표시하는 명령어를 쓰시오.",
+        "state": "text",
+        "result": ["ls"]
+    },
+
 ]

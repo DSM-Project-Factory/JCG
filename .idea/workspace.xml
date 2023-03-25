@@ -4,41 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="faf2230a-8df7-4f32-926b-3a87b6f98b3f" name="변경" comment="ADD Show Questions">
+    <list default="true" id="faf2230a-8df7-4f32-926b-3a87b6f98b3f" name="변경" comment="EDIT Style">
+      <change afterPath="$PROJECT_DIR$/src/assets/image/1-4.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.pnp.cjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.pnp.loader.mjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/cache/@eslint-community-eslint-utils-npm-4.3.0-4ed2f1d6c5-f487760a69.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/cache/@jest-expect-utils-npm-29.5.0-69b6ba2629-c46fb677c8.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/cache/@jest-schemas-npm-29.4.3-7d963e8d97-ac754e245c.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/cache/@jest-types-npm-29.5.0-36a4c63efc-1811f94b19.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/cache/@sinclair-typebox-npm-0.25.24-d04d0f45ef-10219c58f4.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/cache/@types-jest-npm-29.5.0-18eef6c3cc-cd877e5c56.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/cache/@types-node-npm-16.18.18-f0ec721c40-021936e4fc.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/cache/@types-node-npm-18.15.5-8a64f4244c-5fbf3453bd.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/cache/css-declaration-sorter-npm-6.3.1-06bf8d7c1c-ff0d9989ee.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/cache/diff-sequences-npm-29.4.3-ffe403944f-28b265e04f.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/cache/electron-to-chromium-npm-1.4.337-ed912a8583-b7da59afa5.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/cache/expect-npm-29.5.0-395e2d6fda-58f70b3869.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/cache/immer-npm-9.0.19-96ee7d3dab-f02ee53989.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/cache/jest-diff-npm-29.5.0-5c9573ed73-dfd0f4a299.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/cache/jest-get-type-npm-29.4.3-790eefdb01-6ac7f2dde1.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/cache/jest-matcher-utils-npm-29.5.0-f255c78df4-1d3e8c746e.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/cache/jest-message-util-npm-29.5.0-910b21363f-daddece6bb.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/cache/jest-util-npm-29.5.0-cf917d20f1-fd9212950d.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/cache/pretty-format-npm-29.5.0-4f1086147d-4065356b55.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarnrc.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.yarnrc.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/FirstData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/FirstData.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Button.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/List.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/List.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Text.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Text.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/FirstChapter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/FirstChapter.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/Layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/Menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Menu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/GlobalStyle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/GlobalStyle.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,24 +26,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/wjknn/WebstormProjects/JCG",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Users\\wjknn\\WebstormProjects\\JCG\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/wjknn/WebstormProjects/JCG&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\wjknn\\WebstormProjects\\JCG\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wjknn\WebstormProjects\JCG\src\assets\image" />
       <recent name="C:\Users\DSM2022\Desktop\WebStormProject\jcg-silgi" />
     </key>
   </component>
@@ -108,7 +79,9 @@
       <workItem from="1679558189568" duration="30088000" />
       <workItem from="1679640153243" duration="8306000" />
       <workItem from="1679657889064" duration="142000" />
-      <workItem from="1679658033038" duration="16994000" />
+      <workItem from="1679658033038" duration="17617000" />
+      <workItem from="1679720626811" duration="101000" />
+      <workItem from="1679720738993" duration="4749000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1679557259966</created>
@@ -145,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679643020809</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="EDIT Style">
+      <created>1679680324267</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1679680324267</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,6 +147,7 @@
     <MESSAGE value="File Move" />
     <MESSAGE value="Start Fix" />
     <MESSAGE value="ADD Show Questions" />
-    <option name="LAST_COMMIT_MESSAGE" value="ADD Show Questions" />
+    <MESSAGE value="EDIT Style" />
+    <option name="LAST_COMMIT_MESSAGE" value="EDIT Style" />
   </component>
 </project>
