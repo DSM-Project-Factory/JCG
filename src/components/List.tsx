@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from "styled-components";
-import {Colors} from "../style/Color";
 import {Text} from './Text'
 
 interface ListProps {
@@ -10,8 +9,8 @@ interface ListProps {
 export const List = ({arrProps}: ListProps) => {
     return (
         <ListDiv>
-            {arrProps.map((data: string)=>{
-                return <Text key={data}>{data}</Text>
+            {arrProps.map((data: string, index: number)=>{
+                return <Text key={index}>{data}</Text>
             })}
         </ListDiv>
     )
@@ -22,7 +21,6 @@ const ListDiv = styled.div`
   flex-direction: column;
   height: fit-content;
   width: fit-content;
-  border: 2px solid ${Colors.DarkGray1};
   border-radius: 8px;
   padding: 30px;
 `

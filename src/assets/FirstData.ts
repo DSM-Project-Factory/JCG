@@ -169,7 +169,7 @@ export const FirstData: types = [
         "date": "짠!~ 깜짝놀랬지!~",
         "problem": "다음 Javascript언어로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오.",
         "state": "code",
-        "codeData": "const abcd = 1;\nabcd += 120;\nabcd = 500;\nconsole.log(abcd);\nconsole.log('후후...과연 이 글자가 나올까?ssssssssssssssssssssss');",
+        "code": "const abcd = 1;\nabcd += 120;\nabcd = 500;\nconsole.log(abcd);\nconsole.log('후후...과연 이 글자가 나올까?ssssssssssssssssssssss');",
         "language": "javascript",
         "result": [""]
     },

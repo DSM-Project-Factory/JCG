@@ -2,23 +2,33 @@ import React from 'react'
 import styled from "styled-components";
 import {Outlet} from "react-router-dom";
 import {Colors} from "../style/Color";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const Layout = () => {
     return (
         <Background>
-            <Outlet />
+            <ContentSection>
+                <Header/>
+                <Outlet/>
+                <Footer/>
+            </ContentSection>
         </Background>
     )
 }
 
 export default Layout
 
+const ContentSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 1200px;
+  height: 100%;
+`
 const Background = styled.div`
   display: flex;
-  padding: 0 4%;
-  height: 100vh;
-  flex-direction: column;
-  align-items: center;
-  background-color: ${Colors.DarkGray2};
-  width: calc(100vw - 8%);
+  height: 100%;
+  justify-content: center;
+  background-color: ${Colors.G800};
+  width: 100%;
 `
