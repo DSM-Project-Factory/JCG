@@ -1,34 +1,36 @@
-import React from 'react'
-import styled from "styled-components";
-import {Outlet} from "react-router-dom";
-import {Colors} from "../style/Color";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import React from 'react';
+import styled from '@emotion/styled';
+import { Outlet } from 'react-router-dom';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import colors from '../constant/colors';
 
 const Layout = () => {
-    return (
-        <Background>
-            <ContentSection>
-                <Header/>
-                <Outlet/>
-                <Footer/>
-            </ContentSection>
-        </Background>
-    )
-}
+  return (
+    <Background>
+      <Header />
+      <ContentSection>
+        <Outlet />
+      </ContentSection>
+      <Footer />
+    </Background>
+  );
+};
 
-export default Layout
+export default Layout;
 
 const ContentSection = styled.div`
   display: flex;
   flex-direction: column;
-  width: 1200px;
+  width: 1000px;
   height: 100%;
-`
+`;
 const Background = styled.div`
   display: flex;
   height: 100%;
   justify-content: center;
-  background-color: ${Colors.G800};
+  background-color: ${colors.gray800};
   width: 100%;
-`
+  flex-direction: column;
+  align-items: center;
+`;
