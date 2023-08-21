@@ -54,6 +54,10 @@ const Box = styled.div`
   transition: 0.5s;
   box-shadow: 0 0 0 0 transparent, 0 0 0 6px ${colors.gray700} inset;
 
+  span {
+    cursor: pointer;
+  }
+
   &:hover {
     box-shadow: 0 24px 40px -12px ${colors.gray600}, 0 -26px 0 -24px ${colors.white} inset;
     transform: translateY(-12px);

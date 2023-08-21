@@ -2,6 +2,16 @@ import React, { useEffect, useState } from 'react';
 import * as _ from './styles/MainStyle';
 import { Txt } from '../components/Txt';
 import Suggestion from '../components/Suggestion';
+import InfoBox from '../components/InfoBox';
+
+const ex = {
+  title: '인기 과목',
+  subTitle: '사람들이 가장 많이 이용한 과목들',
+  moreLinkTo: '',
+  contents: [
+    { subject: '정보처리기능사', explanation: '정보처리에 있어서 가장 기초적인 것을 물어보는 시험', linkTo: '' },
+  ],
+};
 
 const Main = () => {
   const [imgCnt, setImgCnt] = useState(1);
@@ -34,6 +44,7 @@ const Main = () => {
           <Suggestion title='새로운 과목이 추가되었어요' subTitle='이제 정보처리 기능사 과목을 이용하실 수 있어요.' type='notification' />
           <Suggestion title='오늘의 학습을 완료해 보세요' subTitle='우리의 목표를 위해 달려봅시다!' type='checkCircle' />
         </_.NotificationDiv>
+        <InfoBox title={ex.title} subTitle={ex.subTitle} moreLinkTo={ex.moreLinkTo} contents={ex.contents} />
       </_.Content>
     </>
   );

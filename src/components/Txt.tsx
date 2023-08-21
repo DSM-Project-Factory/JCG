@@ -3,20 +3,23 @@
 import { jsx } from '@emotion/react';
 import { HTMLAttributes } from 'react';
 import { colorsKeyOfType } from '../constant/colors';
+import { colors } from '../constant/colors';
 
 interface Props extends HTMLAttributes<HTMLSpanElement> {
   typography?: 'h1' | 'h2' | 'h3' | 'p1' | 'p2' | 'p3' | 'p4';
   color?: colorsKeyOfType;
+  clickable?: boolean;
 }
 
-export const Txt = ({ typography = 'p3', color = 'white', ...props }: Props) => {
+export const Txt = ({ typography = 'p3', color = 'white', clickable = false, ...props }: Props) => {
   return (
     <span
       css={{
         margin: 0,
         padding: 0,
-        color,
+        color: colors[color],
         lineHeight: 1.6,
+        cursor: clickable ? 'pointer' : 'auto',
         ...TYPOGRAPHY[typography],
       }}
       {...props}
