@@ -9,7 +9,6 @@ import { SecondData } from '../assets/SecondData';
 import { Code } from '../components/Code';
 import { ThirdData } from '../assets/ThirdData';
 import { FourthData } from '../assets/FourthData';
-import colors from '../constant/colors';
 
 export interface listType {
   id: number;
@@ -115,7 +114,7 @@ const Chapter = ({ dataList }: propsTypes) => {
           <Div flex='column' gap='20px'>
             <Div height='fit-content' width='fit-content' align='center' gap='20px'>
               <Txt typography='h1'>{nowNum + 1}/{maxNum}</Txt>
-              <Txt typography='h2' color={collectArr[nowNum] == 'Collect' ? colors.green500 : '#FF0000'}>{collectArr[nowNum]}</Txt>
+              <Txt typography='h2' color={collectArr[nowNum] == 'Collect' ? 'green500' : 'gray100'}>{collectArr[nowNum]}</Txt>
             </Div>
             <Div flex='column' gap='16px' height='500px' width='100%' overflow='scroll' scrollWith='0' onScroll={handleScroll} scroll={hasScroll}>
               <Txt>{randomArr[nowNum].date}</Txt>

@@ -1,6 +1,6 @@
 import normalize from 'emotion-normalize';
 import { Global, css } from '@emotion/react';
-import colors from './colors';
+import { colors } from './colors';
 
 const style = css`
   ${normalize}

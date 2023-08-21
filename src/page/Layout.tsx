@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { Outlet } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import colors from '../constant/colors';
+import { colors } from '../constant/colors';
 
 const Layout = () => {
   return (

@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { Txt } from './Txt';
 import { NavLink } from 'react-router-dom';
 import ProfileImg from '../assets/image/mooner.png';
-import colors from '../constant/colors';
+import { colors } from '../constant/colors';
 
 const Header = () => {
   return (

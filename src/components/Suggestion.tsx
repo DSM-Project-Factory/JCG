@@ -1,6 +1,6 @@
 import { HTMLAttributes } from 'react';
 import styled from '@emotion/styled';
-import colors from '../constant/colors';
+import { colors } from '../constant/colors';
 import Icon from './Icon';
 import { Txt } from './Txt';
 import { IconName } from '../constant/icons';
@@ -20,7 +20,7 @@ const Suggestion = ({ type, title, subTitle, ...props }: Props) => {
       </Top>
       <TxtDiv>
         <Txt typography='h3'>{title}</Txt>
-        <Txt typography='p3' color={colors.gray400}>{subTitle}</Txt>
+        <Txt typography='p3' color='gray400'>{subTitle}</Txt>
       </TxtDiv>
     </Box>
   );
@@ -53,7 +53,7 @@ const Box = styled.div`
   cursor: pointer;
   transition: 0.5s;
   box-shadow: 0 0 0 0 transparent, 0 0 0 6px ${colors.gray700} inset;
-  
+
   &:hover {
     box-shadow: 0 24px 40px -12px ${colors.gray600}, 0 -26px 0 -24px ${colors.white} inset;
     transform: translateY(-12px);

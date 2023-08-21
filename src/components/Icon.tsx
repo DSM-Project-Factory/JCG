@@ -1,11 +1,11 @@
 import { HTMLAttributes } from 'react';
 import { IconName, IconSet } from '../constant/icons';
-import colors from '../constant/colors';
+import { colors, colorsKeyOfType } from '../constant/colors';
 
 interface Props extends HTMLAttributes<HTMLOrSVGElement> {
   name: IconName;
   size?: number;
-  color?: keyof typeof colors;
+  color?: colorsKeyOfType;
 }
 
 const Icon = ({ name, size, color, ...props }: Props) => {

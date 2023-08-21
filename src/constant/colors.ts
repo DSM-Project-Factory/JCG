@@ -1,4 +1,4 @@
-const colors = {
+export const colors = {
   gray50: '#000000',
   gray100: '#FFFFFF',
   gray200: '#F8FBFC',
@@ -23,4 +23,4 @@ const colors = {
   green900: '#153712',
 };
 
-export default colors;
+export type colorsKeyOfType = keyof typeof colors;

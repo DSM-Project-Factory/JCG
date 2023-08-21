@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import colors from '../constant/colors';
+import { colors } from '../constant/colors';
 import { Txt } from './Txt';
 
 const Footer = () => {
@@ -10,26 +10,26 @@ const Footer = () => {
         <Service>
           <Cell>
             <Txt css={{ margin: '0 0 8px' }}>서비스</Txt>
-            <Txt color={colors.gray500}>공지사항</Txt>
-            <Txt color={colors.gray500}>과목</Txt>
-            <Txt color={colors.gray500}>랭킹</Txt>
-            <Txt color={colors.gray500}>질문</Txt>
+            <Txt color='gray500'>공지사항</Txt>
+            <Txt color='gray500'>과목</Txt>
+            <Txt color='gray500'>랭킹</Txt>
+            <Txt color='gray500'>질문</Txt>
           </Cell>
           <Cell>
             <Txt css={{ margin: '0 0 8px' }}>지원</Txt>
-            <Txt color={colors.gray500}>자주 묻는 질문</Txt>
-            <Txt color={colors.gray500}>문의</Txt>
+            <Txt color='gray500'>자주 묻는 질문</Txt>
+            <Txt color='gray500'>문의</Txt>
           </Cell>
           <Cell>
             <Txt css={{ margin: '0 0 8px' }}>기타</Txt>
-            <Txt color={colors.gray500}>개인정보 처리방침</Txt>
-            <Txt color={colors.gray500}>서비스 이용약관</Txt>
+            <Txt color='gray500'>개인정보 처리방침</Txt>
+            <Txt color='gray500'>서비스 이용약관</Txt>
           </Cell>
         </Service>
         <Txt typography='p2'>JCG</Txt>
         <TxtDiv>
-          <Txt typography='p4' color={colors.gray400}>대전광역시 유성구 가정북로 76</Txt>
-          <Txt typography='p4' color={colors.gray400}>wjknn3123@gmail.com</Txt>
+          <Txt typography='p4' color='gray400'>대전광역시 유성구 가정북로 76</Txt>
+          <Txt typography='p4' color='gray400'>wjknn3123@gmail.com</Txt>
         </TxtDiv>
         <IconDiv>
           <Icon></Icon>

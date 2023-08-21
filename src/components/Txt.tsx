@@ -2,13 +2,14 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 import { HTMLAttributes } from 'react';
+import { colorsKeyOfType } from '../constant/colors';
 
 interface Props extends HTMLAttributes<HTMLSpanElement> {
   typography?: 'h1' | 'h2' | 'h3' | 'p1' | 'p2' | 'p3' | 'p4';
-  color?: string;
+  color?: colorsKeyOfType;
 }
 
-export const Txt = ({ typography = 'p3', color = '#fff', ...props }: Props) => {
+export const Txt = ({ typography = 'p3', color = 'white', ...props }: Props) => {
   return (
     <span
       css={{
@@ -33,7 +34,7 @@ const TYPOGRAPHY = {
     fontWeight: 600,
   },
   h3: {
-    fontSize: '24px',
+    fontSize: '20px',
     fontWeight: 600,
   },
   p1: {
