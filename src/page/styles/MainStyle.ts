@@ -1,5 +1,12 @@
 import styled from '@emotion/styled';
 
+export const NotificationDiv = styled.div`
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+`;
 export const TitleShadow = styled.div`
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
   position: absolute;

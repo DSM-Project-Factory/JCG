@@ -5,7 +5,7 @@ import colors from '../constant/colors';
 interface Props extends HTMLAttributes<HTMLOrSVGElement> {
   name: IconName;
   size?: number;
-  color?: string;
+  color?: keyof typeof colors;
 }
 
 const Icon = ({ name, size, color, ...props }: Props) => {
