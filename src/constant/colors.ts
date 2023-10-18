@@ -21,6 +21,6 @@ export const colors = {
   green700: '#248C1B',
   green800: '#185B12',
   green900: '#153712',
-};
+}
 
-export type colorsKeyOfType = keyof typeof colors;
+export type colorsKeyOfType = keyof typeof colors

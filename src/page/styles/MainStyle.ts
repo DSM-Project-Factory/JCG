@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from '@emotion/styled'
 
 export const NotificationDiv = styled.div`
   width: 100%;
@@ -6,7 +6,7 @@ export const NotificationDiv = styled.div`
   display: flex;
   gap: 24px;
   justify-content: space-between;
-`;
+`
 export const TitleShadow = styled.div`
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
   position: absolute;
@@ -14,7 +14,7 @@ export const TitleShadow = styled.div`
   left: 0;
   width: 100%;
   height: 480px;
-`;
+`
 export const Content = styled.div`
   width: 100%;
   height: fit-content;
@@ -23,7 +23,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
+`
 export const TitleDiv = styled.div`
   width: 100%;
   height: 380px;
@@ -32,7 +32,7 @@ export const TitleDiv = styled.div`
   align-items: center;
   flex-direction: column;
   z-index: 1;
-`;
+`
 export const TitleVideo = styled.video<{ bright: number }>`
   width: 100%;
   height: 480px;
@@ -43,4 +43,4 @@ export const TitleVideo = styled.video<{ bright: number }>`
   filter: brightness(${props => props.bright});
   background-color: black;
   transition: 0.4s;
-`;
+`

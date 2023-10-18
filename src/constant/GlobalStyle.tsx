@@ -1,6 +1,6 @@
-import normalize from 'emotion-normalize';
-import { Global, css } from '@emotion/react';
-import { colors } from './colors';
+import normalize from 'emotion-normalize'
+import { Global, css } from '@emotion/react'
+import { colors } from './colors'
 
 const style = css`
   ${normalize}
@@ -37,10 +37,8 @@ const style = css`
     color: white;
     line-height: 160%;
   }
-`;
+`
 
-const GlobalStyle = () => {
-  return <Global styles={style} />;
-};
-
-export default GlobalStyle;
+export const GlobalStyle = () => {
+  return <Global styles={style} />
+}

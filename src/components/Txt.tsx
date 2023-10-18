@@ -1,14 +1,13 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from '@emotion/react';
-import { HTMLAttributes } from 'react';
-import { colorsKeyOfType } from '../constant/colors';
-import { colors } from '../constant/colors';
+import { jsx } from '@emotion/react'
+import { HTMLAttributes } from 'react'
+import { colorsKeyOfType, colors } from 'constant'
 
 interface Props extends HTMLAttributes<HTMLSpanElement> {
-  typography?: 'h1' | 'h2' | 'h3' | 'p1' | 'p2' | 'p3' | 'p4';
-  color?: colorsKeyOfType;
-  clickable?: boolean;
+  typography?: 'h1' | 'h2' | 'h3' | 'p1' | 'p2' | 'p3' | 'p4'
+  color?: colorsKeyOfType
+  clickable?: boolean
 }
 
 export const Txt = ({ typography = 'p3', color = 'white', clickable = false, ...props }: Props) => {
@@ -24,8 +23,8 @@ export const Txt = ({ typography = 'p3', color = 'white', clickable = false, ...
       }}
       {...props}
     />
-  );
-};
+  )
+}
 
 const TYPOGRAPHY = {
   h1: {
@@ -56,4 +55,4 @@ const TYPOGRAPHY = {
     fontSize: '14px',
     fontWeight: 400,
   },
-};
+}

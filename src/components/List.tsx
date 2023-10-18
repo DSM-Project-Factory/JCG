@@ -1,20 +1,19 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import { Txt } from './Txt';
+import styled from '@emotion/styled'
+import { Txt } from 'components'
 
 interface ListProps {
-  arrProps: string[];
+  arrProps: string[]
 }
 
 export const List = ({ arrProps }: ListProps) => {
   return (
     <ListDiv>
       {arrProps.map((data: string, index: number) => {
-        return <Txt key={index}>{data}</Txt>;
+        return <Txt key={index}>{data}</Txt>
       })}
     </ListDiv>
-  );
-};
+  )
+}
 
 const ListDiv = styled.div`
   display: flex;
@@ -23,4 +22,4 @@ const ListDiv = styled.div`
   width: fit-content;
   border-radius: 8px;
   padding: 30px;
-`;
+`

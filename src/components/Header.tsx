@@ -1,28 +1,27 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import { Txt } from './Txt';
-import { NavLink } from 'react-router-dom';
-import ProfileImg from '../assets/image/mooner.png';
-import { colors } from '../constant/colors';
+import styled from '@emotion/styled'
+import { Txt } from 'components'
+import { NavLink } from 'react-router-dom'
+import ProfileImg from '../assets/image/mooner.png'
+import { colors } from 'constant'
 
-const Header = () => {
+export const Header = () => {
   return (
     <Cover>
       <InDiv>
         <FDiv>
-          <Txt typography='h3'>JCG</Txt>
+          <Txt typography="h3">JCG</Txt>
         </FDiv>
         <CDiv>
-          <NavLink to='/subject'>
+          <NavLink to="/subject">
             <Txt>과목</Txt>
           </NavLink>
-          <NavLink to='/ranking'>
+          <NavLink to="/ranking">
             <Txt>랭킹</Txt>
           </NavLink>
-          <NavLink to='/question'>
+          <NavLink to="/question">
             <Txt>질문</Txt>
           </NavLink>
-          <NavLink to='/search'>
+          <NavLink to="/search">
             <Txt>검색</Txt>
           </NavLink>
         </CDiv>
@@ -33,10 +32,8 @@ const Header = () => {
         </FDiv>
       </InDiv>
     </Cover>
-  );
-};
-
-export default Header;
+  )
+}
 
 const ImgCover = styled.div`
   width: 40px;
@@ -46,12 +43,12 @@ const ImgCover = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
+`
 const Img = styled.img`
   width: 36px;
   height: 36px;
   border-radius: 100%;
-`;
+`
 const CDiv = styled.div`
   width: fit-content;
   height: 100%;
@@ -59,20 +56,24 @@ const CDiv = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 48px;
-`;
+
+  span {
+    cursor: pointer;
+  }
+`
 const FDiv = styled.div<{ just?: boolean }>`
   width: 64px;
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: ${(props) => props.just && 'flex-end'};
-`;
+  justify-content: ${props => props.just && 'flex-end'};
+`
 const InDiv = styled.div`
   width: 1000px;
   height: 100%;
   display: flex;
   justify-content: space-between;
-`;
+`
 const Cover = styled.div`
   width: 100%;
   height: 100px;
@@ -80,4 +81,4 @@ const Cover = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 1;
-`;
+`

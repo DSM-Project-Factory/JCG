@@ -1,9 +1,7 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import { Outlet } from 'react-router-dom';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import { colors } from '../constant/colors';
+import styled from '@emotion/styled'
+import { Outlet } from 'react-router-dom'
+import { Header, Footer } from 'components'
+import { colors } from 'constant'
 
 const Layout = () => {
   return (
@@ -14,17 +12,17 @@ const Layout = () => {
       </ContentSection>
       <Footer />
     </Background>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout
 
 const ContentSection = styled.div`
   display: flex;
   flex-direction: column;
   width: 1000px;
   height: 100%;
-`;
+`
 const Background = styled.div`
   display: flex;
   height: 100%;
@@ -33,4 +31,4 @@ const Background = styled.div`
   width: 100%;
   flex-direction: column;
   align-items: center;
-`;
+`
