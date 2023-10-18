@@ -24,6 +24,9 @@ export const Header = () => {
           <NavLink to="/search">
             <Txt>검색</Txt>
           </NavLink>
+          <NavLink to="/english">
+            <Txt>영어</Txt>
+          </NavLink>
         </CDiv>
         <FDiv just>
           <ImgCover>
@@ -48,6 +51,7 @@ const Img = styled.img`
   width: 36px;
   height: 36px;
   border-radius: 100%;
+  background-color: ${colors.gray200};
 `
 const CDiv = styled.div`
   width: fit-content;
