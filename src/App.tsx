@@ -4,6 +4,8 @@ import Chapter from './page/Chapter'
 import All from './page/All'
 import Layout from './page/Layout'
 import Result from './page/Result'
+import English from 'page/english/English'
+import EnglishDetail from 'page/english/EnglishDetail'
 
 function App() {
   return (
@@ -11,6 +13,10 @@ function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Main />} />
+          <Route path="/english">
+            <Route path="" element={<English />} />
+            <Route path=":id" element={<EnglishDetail />} />
+          </Route>
           <Route path="/all" element={<All />} />
           <Route path="/firstChapter" element={<Chapter />} />
           <Route path="/secondChapter" element={<Chapter />} />
