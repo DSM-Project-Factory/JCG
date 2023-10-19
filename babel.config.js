@@ -1,9 +1,5 @@
 module.exports = {
-  plugins: [
-    '@emotion',
-    '@babel/plugin-proposal-optional-chaining',
-    '@babel/plugin-proposal-nullish-coalescing-operator',
-  ],
+  plugins: ['@emotion'],
   presets: [
     '@emotion/babel-preset-css-prop',
     [
