@@ -5,7 +5,7 @@ import { Icon, Txt } from 'components'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { englishType } from 'types'
-import { lesson4 } from 'assets/english'
+import { lesson } from 'assets/english'
 import styled from '@emotion/styled'
 import { colors } from 'constant'
 
@@ -22,7 +22,7 @@ const EnglishDetail = () => {
     setIndex(0)
     setCollect(0)
     if (id && id === '4') {
-      setData(lesson4.sort(() => 0.5 - Math.random()))
+      setData(lesson[`lesson${id}`].sort(() => 0.5 - Math.random()))
     }
   }
 
