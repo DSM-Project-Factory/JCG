@@ -1,11 +1,11 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import {jsx} from '@emotion/react'
-import {Icon, Txt} from 'components'
-import {useEffect, useState} from 'react'
-import {useParams} from 'react-router-dom'
-import {englishType} from 'types'
-import {lesson4} from 'assets/english'
+import { jsx } from '@emotion/react'
+import { Icon, Txt } from 'components'
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import { englishType } from 'types'
+import { lesson } from 'assets/english'
 import styled from '@emotion/styled'
 import {colors} from 'constant'
 import {StringSimilarity} from "../../utils/StringSimilarity";
@@ -23,7 +23,7 @@ const EnglishDetail = () => {
   const [corrects, setCorrects] = useState<boolean[]>([])
   const [inputs, setInputs] = useState<string[]>([])
 
-  const {id} = useParams()
+  const { id } = useParams()
 
   const initData = () => {
     setPerfect(0)
@@ -35,7 +35,7 @@ const EnglishDetail = () => {
     setIndex(0)
     setScore(0)
     if (id && id === '4') {
-      setData(lesson4.sort(() => 0.5 - Math.random()))
+      setData(lesson[`lesson${id}`].sort(() => 0.5 - Math.random()))
     }
   }
 
@@ -77,23 +77,23 @@ const EnglishDetail = () => {
 
   return (
     <Frame>
-      <div css={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%'}}>
-        <div css={{display: 'flex', flexDirection: 'column'}}>
+      <div css={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
+        <div css={{ display: 'flex', flexDirection: 'column' }}>
           <Txt typography="h3">Lesson{id}</Txt>
           <Txt color="gray500">
-            {index + 1}/{data?.length}
+            {data?.length}/{index}
           </Txt>
         </div>
-        <div css={{display: 'flex', gap: '8px'}}>
-          <Button css={{background: isWord ? colors.green700 : colors.gray700}} onClick={() => setIsWord(true)}>
+        <div css={{ display: 'flex', gap: '8px' }}>
+          <Button css={{ background: isWord ? colors.green700 : colors.gray700 }} onClick={() => setIsWord(true)}>
             <Txt>단어</Txt>
           </Button>
-          <Button css={{background: !isWord ? colors.green700 : colors.gray700}} onClick={() => setIsWord(false)}>
+          <Button css={{ background: !isWord ? colors.green700 : colors.gray700 }} onClick={() => setIsWord(false)}>
             <Txt>뜻</Txt>
           </Button>
         </div>
       </div>
-      <div css={{margin: '24px 0'}}>
+      <div css={{ margin: '24px 0' }}>
         <Txt typography="h1">{isWord ? data?.[index].word : data?.[index].meaning.map(txt => txt).join(', ')}</Txt>
       </div>
       <Txt typography="p4">
@@ -104,7 +104,7 @@ const EnglishDetail = () => {
       </Txt>
       <br/>
       <Txt typography="p4">
-        PERFECT: <Txt color="green500">{score}</Txt>
+        PERFECT: <Txt color="green500">{perfect}</Txt>
       </Txt>
       <Fixed>
         <InputFrame>
@@ -114,7 +114,7 @@ const EnglishDetail = () => {
             onChange={event => setAnswer(event.target.value)}
             onKeyDown={event => event.key === 'Enter' && compareAnswer()}
           />
-          <Icon name="checkCircle" color="white" clickable onClick={compareAnswer}/>
+          <Icon name="checkCircle" color="white" clickable onClick={compareAnswer} />
         </InputFrame>
       </Fixed>
     </Frame>
@@ -136,7 +136,6 @@ const Input = styled.input`
   background-color: transparent;
   border: none;
   color: white;
-
   &:focus {
     outline: none;
   }
