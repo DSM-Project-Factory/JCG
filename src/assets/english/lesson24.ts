@@ -1,6 +1,6 @@
 import {englishType} from 'types'
 
-export const lesson4: englishType[] = [
+export const lesson24: englishType[] = [
   {
     id: 1,
     word: "application",
