@@ -7,8 +7,8 @@ import { useParams } from 'react-router-dom'
 import { englishType } from 'types'
 import { lesson } from 'assets/english'
 import styled from '@emotion/styled'
-import {colors} from 'constant'
-import {StringSimilarity} from "../../utils/StringSimilarity";
+import { colors } from 'constant'
+import { StringSimilarity } from "../../utils/StringSimilarity";
 
 const EnglishDetail = () => {
   const [data, setData] = useState<englishType[]>()
@@ -23,7 +23,7 @@ const EnglishDetail = () => {
   const [corrects, setCorrects] = useState<boolean[]>([])
   const [inputs, setInputs] = useState<string[]>([])
 
-  const { id } = useParams()
+  const { grade, id } = useParams()
 
   const initData = () => {
     setPerfect(0)
@@ -34,8 +34,12 @@ const EnglishDetail = () => {
     setInputs([])
     setIndex(0)
     setScore(0)
-    if (id && id === '4') {
-      setData(lesson[`lesson${id}`].sort(() => 0.5 - Math.random()))
+    if (grade && id) {
+      if (grade === '1' && (id === '5' || id === '6' || id === '7' || id === '8')) {
+        setData(lesson[`lesson${grade}${id}`].sort(() => 0.5 - Math.random()))
+      } else if (grade === '2' && (id === '2' || id === '3' || id === '4')) {
+        setData(lesson[`lesson${grade}${id}`].sort(() => 0.5 - Math.random()))
+      }
     }
   }
 
@@ -114,7 +118,7 @@ const EnglishDetail = () => {
             onChange={event => setAnswer(event.target.value)}
             onKeyDown={event => event.key === 'Enter' && compareAnswer()}
           />
-          <Icon name="checkCircle" color="white" clickable onClick={compareAnswer} />
+          <Icon name="checkCircle" color="white" clickable onClick={compareAnswer}/>
         </InputFrame>
       </Fixed>
     </Frame>
@@ -136,6 +140,7 @@ const Input = styled.input`
   background-color: transparent;
   border: none;
   color: white;
+
   &:focus {
     outline: none;
   }
