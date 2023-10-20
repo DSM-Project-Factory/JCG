@@ -15,7 +15,7 @@ function App() {
           <Route path="/" element={<Main />} />
           <Route path="/english">
             <Route path="" element={<English />} />
-            <Route path=":id" element={<EnglishDetail />} />
+            <Route path=":grade/:id" element={<EnglishDetail />} />
           </Route>
           <Route path="/all" element={<All />} />
           <Route path="/firstChapter" element={<Chapter />} />
