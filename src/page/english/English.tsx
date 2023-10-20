@@ -2,8 +2,8 @@ import styled from '@emotion/styled'
 import { InfoElement, Txt } from 'components'
 
 const data = [
-  { subject: 'Lesson4', explanation: 'Living Together', linkTo: '/english/4' },
-  { subject: 'Lesson5', explanation: 'Cultures as a Mirror of Our Lives', linkTo: '/english/5' },
+  { subject: 'Lesson 4', explanation: 'Living Together', linkTo: '/english/4' },
+  { subject: 'Lesson 5', explanation: 'Cultures as a Mirror of Our Lives', linkTo: '/english/5' },
 ]
 
 const English = () => {
