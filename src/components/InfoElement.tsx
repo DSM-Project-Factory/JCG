@@ -12,7 +12,10 @@ export interface InfoElementProps {
 export const InfoElement = ({ subject, explanation, linkTo }: InfoElementProps) => {
   const navigate = useNavigate()
   return (
-    <Container onClick={() => navigate(linkTo)}>
+    <Container onClick={() => {
+      navigate(linkTo);
+      window.scrollTo(0, 0);
+    }}>
       <ContentDiv>
         <Txt typography="p2">{subject}</Txt>
         <Txt color="gray500">{explanation}</Txt>
