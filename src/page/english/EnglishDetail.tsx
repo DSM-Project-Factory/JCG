@@ -1,26 +1,39 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from '@emotion/react'
-import { Icon, Txt } from 'components'
-import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { englishType } from 'types'
-import { lesson4 } from 'assets/english'
+import {jsx} from '@emotion/react'
+import {Icon, Txt} from 'components'
+import {useEffect, useState} from 'react'
+import {useParams} from 'react-router-dom'
+import {englishType} from 'types'
+import {lesson4} from 'assets/english'
 import styled from '@emotion/styled'
-import { colors } from 'constant'
+import {colors} from 'constant'
+import {StringSimilarity} from "../../utils/StringSimilarity";
 
 const EnglishDetail = () => {
   const [data, setData] = useState<englishType[]>()
   const [index, setIndex] = useState<number>(0)
-  const [collect, setCollect] = useState<number>(0)
+  const [score, setScore] = useState<number>(0)
   const [isWord, setIsWord] = useState<boolean>(true)
   const [answer, setAnswer] = useState<string>('')
+  const [perfect, setPerfect] = useState<number>(0)
+  const [combo, setCombo] = useState<number>(0)
+  const [maxCombo, setMaxCombo] = useState<number>(0)
+  const [startTime, setStartTime] = useState<number>(new Date().getTime())
+  const [corrects, setCorrects] = useState<boolean[]>([])
+  const [inputs, setInputs] = useState<string[]>([])
 
-  const { id } = useParams()
+  const {id} = useParams()
 
   const initData = () => {
+    setPerfect(0)
+    setCombo(0)
+    setMaxCombo(0)
+    setStartTime(new Date().getTime())
+    setCorrects([])
+    setInputs([])
     setIndex(0)
-    setCollect(0)
+    setScore(0)
     if (id && id === '4') {
       setData(lesson4.sort(() => 0.5 - Math.random()))
     }
@@ -30,12 +43,12 @@ const EnglishDetail = () => {
     initData()
   }, [id, isWord])
 
-  const collected = () => {
+  const collected = (score: number) => {
     console.log('you collected!')
     setAnswer('')
-    setCollect(prev => prev + 1)
+    setScore(prev => prev + score)
     if (index + 1 === data?.length) {
-      initData()
+      console.log('finish')
     } else {
       setIndex(prev => prev + 1)
     }
@@ -43,50 +56,65 @@ const EnglishDetail = () => {
 
   const compareAnswer = () => {
     console.log("i'm in compare answer")
-    if (isWord) {
-      if (data?.[index].meaning.includes(answer.trim())) {
-        collected()
-      }
-    } else {
-      if (answer.trim() === data?.[index].word) {
-        collected()
-      }
+    if (!data) return
+    const ans = answer.trim()
+    const arr = isWord ? data[index].meaning : [data[index].word]
+    let score = 0
+    for (const str of arr) {
+      score = Math.max(score, Math.round(StringSimilarity.findSimilarity(ans, str) * 100))
     }
+    console.log(score)
+    if (score == 100) {
+      setMaxCombo(prev => Math.max(prev, combo + 1))
+      setCombo(prev => prev + 1)
+    } else {
+      setCombo(0)
+    }
+    setCorrects(prev => [...prev, score == 100])
+    setInputs(prev => [...prev, ans])
+    collected(score)
   }
 
   return (
     <Frame>
-      <div css={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
-        <div css={{ display: 'flex', flexDirection: 'column' }}>
+      <div css={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%'}}>
+        <div css={{display: 'flex', flexDirection: 'column'}}>
           <Txt typography="h3">Lesson{id}</Txt>
           <Txt color="gray500">
-            {data?.length}/{index}
+            {index + 1}/{data?.length}
           </Txt>
         </div>
-        <div css={{ display: 'flex', gap: '8px' }}>
-          <Button css={{ background: isWord ? colors.green700 : colors.gray700 }} onClick={() => setIsWord(true)}>
+        <div css={{display: 'flex', gap: '8px'}}>
+          <Button css={{background: isWord ? colors.green700 : colors.gray700}} onClick={() => setIsWord(true)}>
             <Txt>단어</Txt>
           </Button>
-          <Button css={{ background: !isWord ? colors.green700 : colors.gray700 }} onClick={() => setIsWord(false)}>
+          <Button css={{background: !isWord ? colors.green700 : colors.gray700}} onClick={() => setIsWord(false)}>
             <Txt>뜻</Txt>
           </Button>
         </div>
       </div>
-      <div css={{ margin: '24px 0' }}>
+      <div css={{margin: '24px 0'}}>
         <Txt typography="h1">{isWord ? data?.[index].word : data?.[index].meaning.map(txt => txt).join(', ')}</Txt>
       </div>
       <Txt typography="p4">
-        Collect Count <Txt color="green500">{collect}</Txt>
+        Score: <Txt color="green500">{score}</Txt>
+      </Txt>
+      <Txt typography="p4">
+        Combo: <Txt color="green500">{combo}</Txt> &nbsp; | &nbsp; Max Combo: <Txt color="green500">{maxCombo}</Txt>
+      </Txt>
+      <br/>
+      <Txt typography="p4">
+        PERFECT: <Txt color="green500">{score}</Txt>
       </Txt>
       <Fixed>
         <InputFrame>
           <Input
             value={answer}
-            placeholder={isWord ? '단어의 뜻을 입력해주세요' : '뜻에 맞는 단어를 입력해주세요'}
+            placeholder={isWord ? '단어의 한글 뜻을 입력해주세요' : '뜻에 맞는 영단어를 입력해주세요'}
             onChange={event => setAnswer(event.target.value)}
             onKeyDown={event => event.key === 'Enter' && compareAnswer()}
           />
-          <Icon name="checkCircle" color="white" clickable onClick={compareAnswer} />
+          <Icon name="checkCircle" color="white" clickable onClick={compareAnswer}/>
         </InputFrame>
       </Fixed>
     </Frame>
@@ -108,6 +136,7 @@ const Input = styled.input`
   background-color: transparent;
   border: none;
   color: white;
+
   &:focus {
     outline: none;
   }
