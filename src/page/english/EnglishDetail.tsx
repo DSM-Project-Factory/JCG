@@ -81,7 +81,7 @@ const EnglishDetail = () => {
         <div css={{ display: 'flex', flexDirection: 'column' }}>
           <Txt typography="h3">Lesson{id}</Txt>
           <Txt color="gray500">
-            {data?.length}/{index}
+            {index + 1}/{data?.length}
           </Txt>
         </div>
         <div css={{ display: 'flex', gap: '8px' }}>

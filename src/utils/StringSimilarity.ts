@@ -3,7 +3,8 @@ export class StringSimilarity {
     const m = x.length
     const n = y.length
 
-    const arr: number[][] = new Array<Array<number>>(m + 1).fill(new Array<number>(n + 1).fill(0))
+    const arr: number[][] = Array.from({length: m + 1}, () => new Array<number>(n + 1).fill(0))
+    // console.log(arr)
 
     for (let i = 1; i <= m; i++) arr[i][0] = i
     for (let i = 1; i <= n; i++) arr[0][i] = i
