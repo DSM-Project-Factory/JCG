@@ -1,3 +1,6 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from '@emotion/react'
 import { Icon, Txt } from 'components'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
@@ -16,7 +19,6 @@ const EnglishDetail = () => {
   const { id } = useParams()
 
   const initData = () => {
-    setIsWord(false)
     setIndex(0)
     setCollect(0)
     if (id && id === '4') {
@@ -42,7 +44,7 @@ const EnglishDetail = () => {
   const compareAnswer = () => {
     console.log("i'm in compare answer")
     if (isWord) {
-      if (data?.[index].meaning.map(m => answer.replaceAll(' ', '').trim().includes(m.replaceAll(' ', '')))) {
+      if (data?.[index].meaning.includes(answer.trim())) {
         collected()
       }
     } else {
@@ -54,11 +56,23 @@ const EnglishDetail = () => {
 
   return (
     <Frame>
-      <Txt typography="h3">Lesson{id}</Txt>
-      <Txt color="gray500">
-        {data?.length}/{index}
-      </Txt>
-      <div style={{ margin: '24px 0' }}>
+      <div css={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
+        <div css={{ display: 'flex', flexDirection: 'column' }}>
+          <Txt typography="h3">Lesson{id}</Txt>
+          <Txt color="gray500">
+            {data?.length}/{index}
+          </Txt>
+        </div>
+        <div css={{ display: 'flex', gap: '8px' }}>
+          <Button css={{ background: isWord ? colors.green700 : colors.gray700 }} onClick={() => setIsWord(true)}>
+            <Txt>단어</Txt>
+          </Button>
+          <Button css={{ background: !isWord ? colors.green700 : colors.gray700 }} onClick={() => setIsWord(false)}>
+            <Txt>뜻</Txt>
+          </Button>
+        </div>
+      </div>
+      <div css={{ margin: '24px 0' }}>
         <Txt typography="h1">{isWord ? data?.[index].word : data?.[index].meaning.map(txt => txt).join(', ')}</Txt>
       </div>
       <Txt typography="p4">
@@ -81,6 +95,13 @@ const EnglishDetail = () => {
 
 export default EnglishDetail
 
+const Button = styled.button`
+  border: none;
+  padding: 4px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+`
 const Input = styled.input`
   width: 100%;
   font-size: 20px;

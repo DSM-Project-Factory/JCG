@@ -19,6 +19,7 @@ export const Txt = ({ typography = 'p3', color = 'white', clickable = false, ...
         color: colors[color],
         lineHeight: 1.6,
         cursor: clickable ? 'pointer' : 'auto',
+        pointerEvents: 'none',
         ...TYPOGRAPHY[typography],
       }}
       {...props}
