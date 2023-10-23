@@ -8,7 +8,7 @@ import { englishType } from 'types'
 import { lesson } from 'assets/english'
 import styled from '@emotion/styled'
 import { colors } from 'constant'
-import { StringSimilarity } from "../../utils/StringSimilarity";
+import { StringSimilarity } from '../../utils/StringSimilarity'
 
 const EnglishDetail = () => {
   const [data, setData] = useState<englishType[]>()
@@ -79,6 +79,14 @@ const EnglishDetail = () => {
     collected(score)
   }
 
+  const [show, setShow] = useState<boolean>(false)
+
+  window.onkeydown = e => {
+    if (e.key === 'Control') {
+      setShow(!show)
+    }
+  }
+
   return (
     <Frame>
       <div css={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
@@ -106,10 +114,11 @@ const EnglishDetail = () => {
       <Txt typography="p4">
         Combo: <Txt color="green500">{combo}</Txt> &nbsp; | &nbsp; Max Combo: <Txt color="green500">{maxCombo}</Txt>
       </Txt>
-      <br/>
+      <br />
       <Txt typography="p4">
         PERFECT: <Txt color="green500">{perfect}</Txt>
       </Txt>
+      <Txt>{show && (isWord ? data?.[index].meaning.map(txt => txt).join(', ') : data?.[index].word)}</Txt>
       <Fixed>
         <InputFrame>
           <Input
@@ -118,7 +127,7 @@ const EnglishDetail = () => {
             onChange={event => setAnswer(event.target.value)}
             onKeyDown={event => event.key === 'Enter' && compareAnswer()}
           />
-          <Icon name="checkCircle" color="white" clickable onClick={compareAnswer}/>
+          <Icon name="checkCircle" color="white" clickable onClick={compareAnswer} />
         </InputFrame>
       </Fixed>
     </Frame>

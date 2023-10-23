@@ -49,7 +49,7 @@ export const lesson24: englishType[] = [
   {
     id: 10,
     word: "lift",
-    meaning: ["상황을 나아지게 하다", "형상시키다"]
+    meaning: ["상황을 나아지게 하다", "향상시키다"]
   },
   {
     id: 11,
