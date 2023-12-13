@@ -3,8 +3,9 @@
 import { jsx } from '@emotion/react'
 import { HTMLAttributes } from 'react'
 import { colorsKeyOfType, colors } from 'constant'
+import { HTMLMotionProps, motion } from 'framer-motion'
 
-interface Props extends HTMLAttributes<HTMLSpanElement> {
+interface Props extends HTMLMotionProps<'span'> {
   typography?: 'h1' | 'h2' | 'h3' | 'p1' | 'p2' | 'p3' | 'p4'
   color?: colorsKeyOfType
   clickable?: boolean
@@ -12,7 +13,7 @@ interface Props extends HTMLAttributes<HTMLSpanElement> {
 
 export const Txt = ({ typography = 'p3', color = 'white', clickable = false, ...props }: Props) => {
   return (
-    <span
+    <motion.span
       css={{
         margin: 0,
         padding: 0,

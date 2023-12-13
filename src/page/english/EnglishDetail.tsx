@@ -9,6 +9,7 @@ import { lesson } from 'assets/english'
 import styled from '@emotion/styled'
 import { colors } from 'constant'
 import { StringSimilarity } from '../../utils/StringSimilarity'
+import { animate, motion } from 'framer-motion'
 
 type ValidGradesType = {
   [key: string]: string[]
@@ -94,15 +95,36 @@ const EnglishDetail = () => {
     }
   }
 
+  const variableAnimation = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.3,
+      },
+    },
+  }
+
   return (
     <Frame>
       <div css={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
-        <div css={{ display: 'flex', flexDirection: 'column' }}>
-          <Txt typography="h3">Lesson {id}</Txt>
-          <Txt color="gray500">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          transition={{ staggerChildren: 0.3 }}
+          css={{ display: 'flex', flexDirection: 'column' }}
+        >
+          <Txt variants={variableAnimation} typography="h3">
+            Lesson {id}
+          </Txt>
+          <Txt variants={variableAnimation} color="gray500">
             {index + 1}/{data?.length}
           </Txt>
-        </div>
+        </motion.div>
         <div css={{ display: 'flex', gap: '8px' }}>
           <Button css={{ background: isWord ? colors.green700 : colors.gray700 }} onClick={() => setIsWord(true)}>
             <Txt>단어</Txt>
@@ -113,7 +135,14 @@ const EnglishDetail = () => {
         </div>
       </div>
       <div css={{ margin: '24px 0' }}>
-        <Txt typography="h1">{isWord ? data?.[index].word : data?.[index].meaning.map(txt => txt).join(', ')}</Txt>
+        <Txt
+          typography="h1"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+        >
+          {isWord ? data?.[index].word : data?.[index].meaning.map(txt => txt).join(', ')}
+        </Txt>
       </div>
       <Txt typography="p4">
         Score: <Txt color="green500">{score}</Txt>
@@ -126,7 +155,7 @@ const EnglishDetail = () => {
         PERFECT: <Txt color="green500">{perfect}</Txt>
       </Txt>
       <Txt>{show && (isWord ? data?.[index].meaning.map(txt => txt).join(', ') : data?.[index].word)}</Txt>
-      <Fixed>
+      <Fixed initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
         <InputFrame>
           <Input
             value={answer}
@@ -170,7 +199,7 @@ const InputFrame = styled.div`
   align-items: center;
   padding: 0 24px;
 `
-const Fixed = styled.div`
+const Fixed = styled(motion.div)`
   display: flex;
   justify-content: center;
   width: 100%;
