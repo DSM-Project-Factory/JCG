@@ -16,7 +16,7 @@ type ValidGradesType = {
 
 const validGrades: ValidGradesType = {
   '1': ['5', '6', '7', '8'],
-  '2': ['2', '3', '4', '5'],
+  '2': ['2', '3', '4', '5', '6'],
 }
 
 const EnglishDetail = () => {

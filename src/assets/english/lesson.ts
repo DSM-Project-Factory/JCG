@@ -6,10 +6,21 @@ import { lesson16 } from './lesson16'
 import { lesson17 } from './lesson17'
 import { lesson18 } from './lesson18'
 import { lesson25 } from './lesson25'
+import { lesson26 } from './lesson26'
 import { englishType } from 'types'
 
 type LessonType = {
   [key: string]: englishType[]
 }
 
-export const lesson: LessonType = { lesson15, lesson16, lesson17, lesson18, lesson22, lesson23, lesson24, lesson25 }
+export const lesson: LessonType = {
+  lesson15,
+  lesson16,
+  lesson17,
+  lesson18,
+  lesson22,
+  lesson23,
+  lesson24,
+  lesson25,
+  lesson26,
+}
