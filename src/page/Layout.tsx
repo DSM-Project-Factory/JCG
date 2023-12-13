@@ -3,14 +3,14 @@ import { Outlet } from 'react-router-dom'
 import { Header, Footer } from 'components'
 import { colors } from 'constant'
 
-const Layout = () => {
+const Layout = ({ footer }: { footer?: boolean }) => {
   return (
     <Background>
       <Header />
       <ContentSection>
         <Outlet />
       </ContentSection>
-      <Footer />
+      {footer && <Footer />}
     </Background>
   )
 }

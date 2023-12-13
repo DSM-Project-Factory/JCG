@@ -11,11 +11,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<Layout />}>
+        <Route element={<Layout footer />}>
           <Route path="/" element={<Main />} />
           <Route path="/english">
             <Route path="" element={<English />} />
-            <Route path=":grade/:id" element={<EnglishDetail />} />
           </Route>
           <Route path="/all" element={<All />} />
           <Route path="/firstChapter" element={<Chapter />} />
@@ -23,6 +22,9 @@ function App() {
           <Route path="/thirdChapter" element={<Chapter />} />
           <Route path="/FourthChapter" element={<Chapter />} />
           <Route path="/result" element={<Result />} />
+        </Route>
+        <Route path="/english" element={<Layout />}>
+          <Route path=":grade/:id" element={<EnglishDetail />} />
         </Route>
       </Routes>
     </BrowserRouter>
