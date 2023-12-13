@@ -37,7 +37,7 @@ const EnglishDetail = () => {
     if (grade && id) {
       if (grade === '1' && (id === '5' || id === '6' || id === '7' || id === '8')) {
         setData(lesson[`lesson${grade}${id}`].sort(() => 0.5 - Math.random()))
-      } else if (grade === '2' && (id === '2' || id === '3' || id === '4')) {
+      } else if (grade === '2' && (id === '2' || id === '3' || id === '4' || id === '5')) {
         setData(lesson[`lesson${grade}${id}`].sort(() => 0.5 - Math.random()))
       }
     }

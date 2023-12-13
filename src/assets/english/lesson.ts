@@ -5,5 +5,6 @@ import { lesson15 } from './lesson15'
 import { lesson16 } from './lesson16'
 import { lesson17 } from './lesson17'
 import { lesson18 } from './lesson18'
+import { lesson25 } from './lesson25'
 
-export const lesson = { lesson15, lesson16, lesson17, lesson18, lesson22, lesson23, lesson24 }
+export const lesson = { lesson15, lesson16, lesson17, lesson18, lesson22, lesson23, lesson24, lesson25 }
