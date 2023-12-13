@@ -10,6 +10,15 @@ import styled from '@emotion/styled'
 import { colors } from 'constant'
 import { StringSimilarity } from '../../utils/StringSimilarity'
 
+type ValidGradesType = {
+  [key: string]: string[]
+}
+
+const validGrades: ValidGradesType = {
+  '1': ['5', '6', '7', '8'],
+  '2': ['2', '3', '4', '5'],
+}
+
 const EnglishDetail = () => {
   const [data, setData] = useState<englishType[]>()
   const [index, setIndex] = useState<number>(0)
@@ -35,9 +44,7 @@ const EnglishDetail = () => {
     setIndex(0)
     setScore(0)
     if (grade && id) {
-      if (grade === '1' && (id === '5' || id === '6' || id === '7' || id === '8')) {
-        setData(lesson[`lesson${grade}${id}`].sort(() => 0.5 - Math.random()))
-      } else if (grade === '2' && (id === '2' || id === '3' || id === '4' || id === '5')) {
+      if (grade in validGrades && validGrades[grade].includes(id)) {
         setData(lesson[`lesson${grade}${id}`].sort(() => 0.5 - Math.random()))
       }
     }
