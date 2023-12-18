@@ -136,7 +136,7 @@ const English = () => {
                 <ItemBox
                   key={v.id}
                   onClick={() => {
-                    addRecentEnglish(1, index)
+                    addRecentEnglish(0, index)
                     v.linkTo && navigate(v.linkTo)
                   }}
                 >
@@ -188,7 +188,7 @@ const English = () => {
                 <ItemBox
                   key={v.id}
                   onClick={() => {
-                    addRecentEnglish(1, index)
+                    addRecentEnglish(2, index)
                     v.linkTo && navigate(v.linkTo)
                   }}
                 >
