@@ -1,3 +1,4 @@
+import { keyframes } from '@emotion/react'
 import styled from '@emotion/styled'
 import { InfoElement, Txt } from 'components'
 import { useLayoutEffect, useState } from 'react'
@@ -36,11 +37,29 @@ const data: dataType[][] = [
       subject: 'Lesson 3',
       explanation: 'Toward a Better Environment',
       linkTo: '/english/2/3',
-      img: 'https://thepetridish.my/wp-content/uploads/2017/05/ooho-edible-water-bottle.jpg',
+      img: 'https://images.squarespace-cdn.com/content/v1/5a94fbc01aef1de0742e8809/1585869321676-JLC6L3VFV95BMHVPF5Z4/ooho-notpla.jpg?format=1000w',
     },
-    { id: 24, subject: 'Lesson 4', explanation: 'Living Together', linkTo: '/english/2/4' },
-    { id: 25, subject: 'Lesson 5', explanation: 'Cultures as a Mirror of Our Lives', linkTo: '/english/2/5' },
-    { id: 26, subject: 'Lesson 6', explanation: 'Technology, What Defines Us as Humans', linkTo: '/english/2/6' },
+    {
+      id: 24,
+      subject: 'Lesson 4',
+      explanation: 'Living Together',
+      linkTo: '/english/2/4',
+      img: 'https://image6.zibster.com/8933/3_20210304081705_24834925_large.jpg',
+    },
+    {
+      id: 25,
+      subject: 'Lesson 5',
+      explanation: 'Cultures as a Mirror of Our Lives',
+      linkTo: '/english/2/5',
+      img: 'https://t1.daumcdn.net/cfile/blog/137C44124CBEE654C0',
+    },
+    {
+      id: 26,
+      subject: 'Lesson 6',
+      explanation: 'Technology, What Defines Us as Humans',
+      linkTo: '/english/2/6',
+      img: 'https://sfgirlnet.files.wordpress.com/2016/07/irobot-sonny.jpg?w=640',
+    },
     { id: 27, subject: 'Lesson 7' },
     { id: 28, subject: 'Lesson 8' },
   ],
@@ -95,7 +114,7 @@ const English = () => {
                 v.linkTo && navigate(v.linkTo)
               }}
             >
-              <Image src={v.img} />
+              {v.img ? <Image loading="lazy" src={v.img} /> : <Skeleton width={180} height={180} />}
               <TxtBox>
                 <Txt typography="p2">{v.explanation}</Txt>
                 <Txt typography="p4" color="--gray500">
@@ -108,30 +127,65 @@ const English = () => {
       </ListDiv>
       <button onClick={() => removeRecentEnglish()}>최근 기록 초기화</button>
       <br />
-      <Txt typography="h1">English</Txt>
       <ListDiv>
-        <Txt typography="h3">1st Grade</Txt>
-        {data[0].map((value, index) => (
-          <div onClick={() => addRecentEnglish(0, index)} key={'1st' + index}>
-            <InfoElement {...value} />
-          </div>
-        ))}
+        <Txt typography="h1">1st Grade</Txt>
+        <Horizontal>
+          {data[0].map((v, index) => (
+            <>
+              {v.linkTo && (
+                <ItemBox key={v.id} onClick={() => addRecentEnglish(1, index)}>
+                  {v.img ? <Image loading="lazy" src={v.img} /> : <Skeleton width={180} height={180} />}
+                  <TxtBox>
+                    <Txt typography="p2">{v.explanation}</Txt>
+                    <Txt typography="p4" color="--gray500">
+                      {`Grade 1 ${v.subject}`}
+                    </Txt>
+                  </TxtBox>
+                </ItemBox>
+              )}
+            </>
+          ))}
+        </Horizontal>
       </ListDiv>
       <ListDiv>
-        <Txt typography="h3">2nd Grade</Txt>
-        {data[1].map((value, index) => (
-          <div onClick={() => addRecentEnglish(1, index)} key={'2nd' + index}>
-            <InfoElement {...value} />
-          </div>
-        ))}
+        <Txt typography="h1">2nd Grade</Txt>
+        <Horizontal>
+          {data[1].map((v, index) => (
+            <>
+              {v.linkTo && (
+                <ItemBox key={v.id} onClick={() => addRecentEnglish(1, index)}>
+                  {v.img ? <Image loading="lazy" src={v.img} /> : <Skeleton width={180} height={180} />}
+                  <TxtBox>
+                    <Txt typography="p2">{v.explanation}</Txt>
+                    <Txt typography="p4" color="--gray500">
+                      {`Grade 2 ${v.subject}`}
+                    </Txt>
+                  </TxtBox>
+                </ItemBox>
+              )}
+            </>
+          ))}
+        </Horizontal>
       </ListDiv>
       <ListDiv>
-        <Txt typography="h3">3rd Grade</Txt>
-        {data[2].map((value, index) => (
-          <div onClick={() => addRecentEnglish(2, index)} key={'3rd' + index}>
-            <InfoElement {...value} />
-          </div>
-        ))}
+        <Txt typography="h1">3rd Grade</Txt>
+        <Horizontal>
+          {data[2].map((v, index) => (
+            <>
+              {v.linkTo && (
+                <ItemBox key={v.id} onClick={() => addRecentEnglish(1, index)}>
+                  {v.img ? <Image loading="lazy" src={v.img} /> : <Skeleton width={180} height={180} />}
+                  <TxtBox>
+                    <Txt typography="p2">{v.explanation}</Txt>
+                    <Txt typography="p4" color="--gray500">
+                      {`Grade 3 ${v.subject}`}
+                    </Txt>
+                  </TxtBox>
+                </ItemBox>
+              )}
+            </>
+          ))}
+        </Horizontal>
       </ListDiv>
     </Frame>
   )
@@ -139,28 +193,45 @@ const English = () => {
 
 export default English
 
+const textShine = keyframes`
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+`
+
+const Skeleton = styled.div<{ width: number; height: number }>`
+  width: ${props => props.width}px;
+  height: ${props => props.height}px;
+  border-radius: 8px;
+  background: linear-gradient(to right, var(--gray700) 40%, var(--gray600) 50%, var(--gray700) 60%);
+  background-size: 300% auto;
+  animation: ${textShine} 1.2s ease-out infinite;
+`
 const Image = styled.img`
-  width: 100%;
+  width: 180px;
   aspect-ratio: 1 / 1;
   border-radius: 8px;
   background-color: var(--gray700);
   object-fit: cover;
   transition: 0.3s;
 `
-const ItemBox = styled.div`
+const ItemBox = styled.article`
   display: flex;
   flex-direction: column;
   gap: 12px;
-  width: 20%;
+  width: 180px;
   cursor: pointer;
   transition: 0.3s;
 
   &:hover {
-    div {
-      transform: translateY(-8px);
+    article {
+      transform: translateY(-4px);
     }
     img {
-      transform: scale(0.9);
+      filter: contrast(160%);
     }
   }
 `
@@ -172,10 +243,11 @@ const Horizontal = styled.div`
   display: flex;
   gap: 24px;
   width: 100%;
+  overflow: hidden;
   overflow-x: scroll;
+  position: relative;
 
   ::-webkit-scrollbar {
-    width: 0%;
     height: 0;
   }
 `
