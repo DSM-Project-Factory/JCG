@@ -7,7 +7,6 @@ import { useParams } from 'react-router-dom'
 import { englishType } from 'types'
 import { lesson } from 'assets/english'
 import styled from '@emotion/styled'
-import { colors } from 'constant'
 import { StringSimilarity } from '../../utils/StringSimilarity'
 import { animate, motion } from 'framer-motion'
 
@@ -121,15 +120,15 @@ const EnglishDetail = () => {
           <Txt variants={variableAnimation} typography="h3">
             Lesson {id}
           </Txt>
-          <Txt variants={variableAnimation} color="gray500">
+          <Txt variants={variableAnimation} color="--gray500">
             {index + 1}/{data?.length}
           </Txt>
         </motion.div>
         <div css={{ display: 'flex', gap: '8px' }}>
-          <Button css={{ background: isWord ? colors.green700 : colors.gray700 }} onClick={() => setIsWord(true)}>
+          <Button css={{ background: isWord ? 'var(--green700)' : 'var(--gray700)' }} onClick={() => setIsWord(true)}>
             <Txt>단어</Txt>
           </Button>
-          <Button css={{ background: !isWord ? colors.green700 : colors.gray700 }} onClick={() => setIsWord(false)}>
+          <Button css={{ background: !isWord ? 'var(--green700)' : 'var(--gray700)' }} onClick={() => setIsWord(false)}>
             <Txt>뜻</Txt>
           </Button>
         </div>
@@ -145,14 +144,14 @@ const EnglishDetail = () => {
         </Txt>
       </div>
       <Txt typography="p4">
-        Score: <Txt color="green500">{score}</Txt>
+        Score: <Txt color="--green500">{score}</Txt>
       </Txt>
       <Txt typography="p4">
-        Combo: <Txt color="green500">{combo}</Txt> &nbsp; | &nbsp; Max Combo: <Txt color="green500">{maxCombo}</Txt>
+        Combo: <Txt color="--green500">{combo}</Txt> &nbsp; | &nbsp; Max Combo: <Txt color="--green500">{maxCombo}</Txt>
       </Txt>
       <br />
       <Txt typography="p4">
-        PERFECT: <Txt color="green500">{perfect}</Txt>
+        PERFECT: <Txt color="--green500">{perfect}</Txt>
       </Txt>
       <Txt>{show && (isWord ? data?.[index].meaning.map(txt => txt).join(', ') : data?.[index].word)}</Txt>
       <Fixed initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
@@ -163,7 +162,7 @@ const EnglishDetail = () => {
             onChange={event => setAnswer(event.target.value)}
             onKeyDown={event => event.key === 'Enter' && compareAnswer()}
           />
-          <Icon name="checkCircle" color="white" clickable onClick={compareAnswer} />
+          <Icon name="checkCircle" color="--white" clickable onClick={compareAnswer} />
         </InputFrame>
       </Fixed>
     </Frame>
@@ -194,7 +193,7 @@ const InputFrame = styled.div`
   width: calc(1000px - 48px);
   height: 52px;
   border-radius: 16px;
-  background-color: ${colors.gray700};
+  background-color: var(--gray700);
   display: flex;
   align-items: center;
   padding: 0 24px;

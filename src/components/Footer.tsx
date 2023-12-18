@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import { colors } from 'constant'
 import { Txt } from 'components'
 
 export const Footer = () => {
@@ -9,28 +8,28 @@ export const Footer = () => {
         <Service>
           <Cell>
             <Txt css={{ margin: '0 0 8px' }}>서비스</Txt>
-            <Txt color="gray500">공지사항</Txt>
-            <Txt color="gray500">과목</Txt>
-            <Txt color="gray500">랭킹</Txt>
-            <Txt color="gray500">질문</Txt>
+            <Txt color="--gray500">공지사항</Txt>
+            <Txt color="--gray500">과목</Txt>
+            <Txt color="--gray500">랭킹</Txt>
+            <Txt color="--gray500">질문</Txt>
           </Cell>
           <Cell>
             <Txt css={{ margin: '0 0 8px' }}>지원</Txt>
-            <Txt color="gray500">자주 묻는 질문</Txt>
-            <Txt color="gray500">문의</Txt>
+            <Txt color="--gray500">자주 묻는 질문</Txt>
+            <Txt color="--gray500">문의</Txt>
           </Cell>
           <Cell>
             <Txt css={{ margin: '0 0 8px' }}>기타</Txt>
-            <Txt color="gray500">개인정보 처리방침</Txt>
-            <Txt color="gray500">서비스 이용약관</Txt>
+            <Txt color="--gray500">개인정보 처리방침</Txt>
+            <Txt color="--gray500">서비스 이용약관</Txt>
           </Cell>
         </Service>
         <Txt typography="p2">JCG</Txt>
         <TxtDiv>
-          <Txt typography="p4" color="gray400">
+          <Txt typography="p4" color="--gray400">
             대전광역시 유성구 가정북로 76
           </Txt>
-          <Txt typography="p4" color="gray400">
+          <Txt typography="p4" color="--gray400">
             wjknn3123@gmail.com
           </Txt>
         </TxtDiv>
@@ -50,7 +49,7 @@ const Icon = styled.div`
   width: 40px;
   height: 40px;
   border-radius: 100%;
-  background-color: ${colors.gray600};
+  background-color: var(--gray600);
 `
 const IconDiv = styled.div`
   width: 100%;
@@ -92,5 +91,5 @@ const Cover = styled.div`
   height: fit-content;
   display: flex;
   justify-content: center;
-  background-color: ${colors.gray700};
+  background-color: var(--gray700);
 `

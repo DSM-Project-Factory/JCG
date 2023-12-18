@@ -2,7 +2,6 @@ import styled from '@emotion/styled'
 import { Txt } from 'components'
 import { NavLink } from 'react-router-dom'
 import ProfileImg from '../assets/image/mooner.png'
-import { colors } from 'constant'
 
 export const Header = () => {
   return (
@@ -42,7 +41,7 @@ const ImgCover = styled.div`
   width: 40px;
   height: 40px;
   border-radius: 100%;
-  border: solid ${colors.green600} 2px;
+  border: solid var(--green600) 2px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,7 +50,7 @@ const Img = styled.img`
   width: 36px;
   height: 36px;
   border-radius: 100%;
-  background-color: ${colors.gray200};
+  background-color: var(--gray200);
 `
 const CDiv = styled.div`
   width: fit-content;

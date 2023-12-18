@@ -1,7 +1,6 @@
 import styled from '@emotion/styled'
 import { Outlet } from 'react-router-dom'
 import { Header, Footer } from 'components'
-import { colors } from 'constant'
 
 const Layout = ({ footer }: { footer?: boolean }) => {
   return (
@@ -27,7 +26,7 @@ const Background = styled.div`
   display: flex;
   height: 100%;
   justify-content: center;
-  background-color: ${colors.gray800};
+  background-color: var(--gray800);
   width: 100%;
   flex-direction: column;
   align-items: center;

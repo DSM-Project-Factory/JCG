@@ -16,9 +16,9 @@ export const InfoBox = ({ title, subTitle, moreLinkTo, contents }: InfoProps) =>
       <TitleDiv>
         <TxtDiv>
           <Txt typography="h3">{title}</Txt>
-          <Txt color="gray400">{subTitle}</Txt>
+          <Txt color="--gray400">{subTitle}</Txt>
         </TxtDiv>
-        <Txt color={'green500'} clickable onClick={() => navigate(moreLinkTo)}>
+        <Txt color="--green500" clickable onClick={() => navigate(moreLinkTo)}>
           더보기
         </Txt>
       </TitleDiv>
