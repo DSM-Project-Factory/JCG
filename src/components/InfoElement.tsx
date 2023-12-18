@@ -4,25 +4,24 @@ import styled from '@emotion/styled'
 
 export interface InfoElementProps {
   subject: string
-  explanation: string
-  linkTo: string
+  explanation?: string
+  linkTo?: string
 }
 
 export const InfoElement = ({ subject, explanation, linkTo }: InfoElementProps) => {
   const navigate = useNavigate()
   return (
-    <Container
-      onClick={() => {
-        navigate(linkTo)
-        window.scrollTo(0, 0)
-      }}
-    >
-      <ContentDiv>
-        <Txt typography="p2">{subject}</Txt>
-        <Txt color="--gray500">{explanation}</Txt>
-      </ContentDiv>
-      <Icon name="arrowRight" color="--gray600" />
-    </Container>
+    <>
+      {linkTo && (
+        <Container onClick={() => navigate(linkTo)}>
+          <ContentDiv>
+            <Txt typography="p2">{subject}</Txt>
+            <Txt color="--gray500">{explanation}</Txt>
+          </ContentDiv>
+          <Icon name="arrowRight" color="--gray600" />
+        </Container>
+      )}
+    </>
   )
 }
 

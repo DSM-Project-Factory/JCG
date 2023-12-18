@@ -7,16 +7,17 @@ interface Props extends HTMLMotionProps<'span'> {
   typography?: 'h1' | 'h2' | 'h3' | 'p1' | 'p2' | 'p3' | 'p4'
   color?: string
   clickable?: boolean
+  lineHeight?: number
 }
 
-export const Txt = ({ typography = 'p3', color = '--white', clickable = false, ...props }: Props) => {
+export const Txt = ({ typography = 'p3', color = '--white', clickable = false, lineHeight = 1.6, ...props }: Props) => {
   return (
     <motion.span
       css={{
         margin: 0,
         padding: 0,
         color: `var(${color})`,
-        lineHeight: 1.6,
+        lineHeight: lineHeight,
         cursor: clickable ? 'pointer' : 'auto',
         pointerEvents: 'none',
         ...TYPOGRAPHY[typography],
