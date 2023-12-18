@@ -133,7 +133,13 @@ const English = () => {
           {data[0].map((v, index) => (
             <>
               {v.linkTo && (
-                <ItemBox key={v.id} onClick={() => addRecentEnglish(1, index)}>
+                <ItemBox
+                  key={v.id}
+                  onClick={() => {
+                    addRecentEnglish(1, index)
+                    v.linkTo && navigate(v.linkTo)
+                  }}
+                >
                   {v.img ? <Image loading="lazy" src={v.img} /> : <Skeleton width={180} height={180} />}
                   <TxtBox>
                     <Txt typography="p2">{v.explanation}</Txt>
@@ -153,7 +159,13 @@ const English = () => {
           {data[1].map((v, index) => (
             <>
               {v.linkTo && (
-                <ItemBox key={v.id} onClick={() => addRecentEnglish(1, index)}>
+                <ItemBox
+                  key={v.id}
+                  onClick={() => {
+                    addRecentEnglish(1, index)
+                    v.linkTo && navigate(v.linkTo)
+                  }}
+                >
                   {v.img ? <Image loading="lazy" src={v.img} /> : <Skeleton width={180} height={180} />}
                   <TxtBox>
                     <Txt typography="p2">{v.explanation}</Txt>
@@ -173,7 +185,13 @@ const English = () => {
           {data[2].map((v, index) => (
             <>
               {v.linkTo && (
-                <ItemBox key={v.id} onClick={() => addRecentEnglish(1, index)}>
+                <ItemBox
+                  key={v.id}
+                  onClick={() => {
+                    addRecentEnglish(1, index)
+                    v.linkTo && navigate(v.linkTo)
+                  }}
+                >
                   {v.img ? <Image loading="lazy" src={v.img} /> : <Skeleton width={180} height={180} />}
                   <TxtBox>
                     <Txt typography="p2">{v.explanation}</Txt>
