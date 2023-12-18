@@ -1,6 +1,6 @@
 import { keyframes } from '@emotion/react'
 import styled from '@emotion/styled'
-import { InfoElement, Txt } from 'components'
+import { Txt } from 'components'
 import { useLayoutEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
@@ -12,7 +12,7 @@ interface dataType {
   img?: string
 }
 
-const data: dataType[][] = [
+export const englishData: dataType[][] = [
   [
     { id: 11, subject: 'Lesson 1' },
     { id: 12, subject: 'Lesson 2' },
@@ -89,7 +89,7 @@ const English = () => {
   }, [])
 
   const addRecentEnglish = (dataIndex: number, index: number) => {
-    const addData = data[dataIndex][index]
+    const addData = englishData[dataIndex][index]
     const english = recentEnglish.filter(v => v.id !== addData.id)
     const result = [{ ...addData }, ...english]
     localStorage.setItem('recent_english', JSON.stringify(result))
@@ -130,7 +130,7 @@ const English = () => {
       <ListDiv>
         <Txt typography="h1">1st Grade</Txt>
         <Horizontal>
-          {data[0].map((v, index) => (
+          {englishData[0].map((v, index) => (
             <>
               {v.linkTo && (
                 <ItemBox
@@ -156,7 +156,7 @@ const English = () => {
       <ListDiv>
         <Txt typography="h1">2nd Grade</Txt>
         <Horizontal>
-          {data[1].map((v, index) => (
+          {englishData[1].map((v, index) => (
             <>
               {v.linkTo && (
                 <ItemBox
@@ -182,7 +182,7 @@ const English = () => {
       <ListDiv>
         <Txt typography="h1">3rd Grade</Txt>
         <Horizontal>
-          {data[2].map((v, index) => (
+          {englishData[2].map((v, index) => (
             <>
               {v.linkTo && (
                 <ItemBox
@@ -211,7 +211,7 @@ const English = () => {
 
 export default English
 
-const textShine = keyframes`
+const Loading = keyframes`
   0% {
     background-position: 100% 50%;
   }
@@ -226,7 +226,7 @@ const Skeleton = styled.div<{ width: number; height: number }>`
   border-radius: 8px;
   background: linear-gradient(to right, var(--gray700) 40%, var(--gray600) 50%, var(--gray700) 60%);
   background-size: 300% auto;
-  animation: ${textShine} 1.2s ease-out infinite;
+  animation: ${Loading} 1.2s ease-out infinite;
 `
 const Image = styled.img`
   width: 180px;

@@ -4,7 +4,7 @@ import { Header, Footer } from 'components'
 
 const Layout = ({ footer }: { footer?: boolean }) => {
   return (
-    <Background>
+    <Background footer={!!footer}>
       <Header />
       <ContentSection>
         <Outlet />
@@ -22,9 +22,9 @@ const ContentSection = styled.div`
   width: 1000px;
   height: 100%;
 `
-const Background = styled.div`
+const Background = styled.div<{ footer: boolean }>`
   display: flex;
-  height: 100%;
+  height: ${props => (!props.footer ? '100vh' : 'auto')};
   justify-content: center;
   background-color: var(--gray800);
   width: 100%;

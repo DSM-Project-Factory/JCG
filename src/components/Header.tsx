@@ -83,5 +83,5 @@ const Cover = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;
+  z-index: 10;
 `

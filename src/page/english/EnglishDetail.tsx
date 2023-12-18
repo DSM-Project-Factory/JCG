@@ -1,6 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from '@emotion/react'
+import { jsx, keyframes } from '@emotion/react'
 import { Icon, Txt } from 'components'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
@@ -9,6 +9,7 @@ import { lesson } from 'assets/english'
 import styled from '@emotion/styled'
 import { StringSimilarity } from '../../utils/StringSimilarity'
 import { animate, motion } from 'framer-motion'
+import { englishData } from './English'
 
 type ValidGradesType = {
   [key: string]: string[]
@@ -110,50 +111,59 @@ const EnglishDetail = () => {
 
   return (
     <Frame>
-      <div css={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          transition={{ staggerChildren: 0.3 }}
-          css={{ display: 'flex', flexDirection: 'column' }}
-        >
-          <Txt variants={variableAnimation} typography="h3">
-            Lesson {id}
-          </Txt>
-          <Txt variants={variableAnimation} color="--gray500">
-            {index + 1}/{data?.length}
-          </Txt>
-        </motion.div>
-        <div css={{ display: 'flex', gap: '8px' }}>
-          <Button css={{ background: isWord ? 'var(--green700)' : 'var(--gray700)' }} onClick={() => setIsWord(true)}>
-            <Txt>단어</Txt>
-          </Button>
-          <Button css={{ background: !isWord ? 'var(--green700)' : 'var(--gray700)' }} onClick={() => setIsWord(false)}>
-            <Txt>뜻</Txt>
-          </Button>
+      <DropFilter />
+      {grade && id && <BackImg url={englishData[+grade - 1][+id - 1].img} />}
+      <div css={{ zIndex: 3 }}>
+        <div css={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            transition={{ staggerChildren: 0.3 }}
+            css={{ display: 'flex', flexDirection: 'column' }}
+          >
+            <Txt variants={variableAnimation} typography="h3">
+              Lesson {id}
+            </Txt>
+            <Txt variants={variableAnimation} color="--gray500">
+              {index + 1}/{data?.length}
+            </Txt>
+          </motion.div>
+          <div css={{ display: 'flex', gap: '8px' }}>
+            <Button css={{ background: isWord ? 'var(--green700)' : 'var(--gray700)' }} onClick={() => setIsWord(true)}>
+              <Txt>단어</Txt>
+            </Button>
+            <Button
+              css={{ background: !isWord ? 'var(--green700)' : 'var(--gray700)' }}
+              onClick={() => setIsWord(false)}
+            >
+              <Txt>뜻</Txt>
+            </Button>
+          </div>
         </div>
-      </div>
-      <div css={{ margin: '24px 0' }}>
-        <Txt
-          typography="h1"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.6 }}
-        >
-          {isWord ? data?.[index].word : data?.[index].meaning.map(txt => txt).join(', ')}
+        <div css={{ margin: '24px 0' }}>
+          <Txt
+            typography="h1"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+            css={{ fontSize: 80, color: 'rgba(255, 255, 255, 0.32)' }}
+          >
+            {isWord ? data?.[index].word : data?.[index].meaning.map(txt => txt).join(', ')}
+          </Txt>
+        </div>
+        <Txt typography="p4">
+          Score: <Txt color="--green500">{score}</Txt>
         </Txt>
+        <Txt typography="p4">
+          Combo: <Txt color="--green500">{combo}</Txt> &nbsp; | &nbsp; Max Combo:{' '}
+          <Txt color="--green500">{maxCombo}</Txt>
+        </Txt>
+        <br />
+        <Txt typography="p4">
+          PERFECT: <Txt color="--green500">{perfect}</Txt>
+        </Txt>
+        <Txt>{show && (isWord ? data?.[index].meaning.map(txt => txt).join(', ') : data?.[index].word)}</Txt>
       </div>
-      <Txt typography="p4">
-        Score: <Txt color="--green500">{score}</Txt>
-      </Txt>
-      <Txt typography="p4">
-        Combo: <Txt color="--green500">{combo}</Txt> &nbsp; | &nbsp; Max Combo: <Txt color="--green500">{maxCombo}</Txt>
-      </Txt>
-      <br />
-      <Txt typography="p4">
-        PERFECT: <Txt color="--green500">{perfect}</Txt>
-      </Txt>
-      <Txt>{show && (isWord ? data?.[index].meaning.map(txt => txt).join(', ') : data?.[index].word)}</Txt>
       <Fixed initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
         <InputFrame>
           <Input
@@ -171,6 +181,36 @@ const EnglishDetail = () => {
 
 export default EnglishDetail
 
+const Loading = keyframes`
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+`
+const DropFilter = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(240px);
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+`
+const BackImg = styled.div<{ url: string | undefined }>`
+  background-image: ${props => `url(${props.url})`};
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  filter: contrast(200%);
+  z-index: 1;
+  background-size: 120% auto;
+  animation: ${Loading} 4s ease-in-out infinite alternate;
+`
 const Button = styled.button`
   border: none;
   padding: 4px 18px;
@@ -188,12 +228,16 @@ const Input = styled.input`
   &:focus {
     outline: none;
   }
+
+  ::placeholder {
+    color: rgba(255, 255, 255, 0.52);
+  }
 `
 const InputFrame = styled.div`
   width: calc(1000px - 48px);
   height: 52px;
   border-radius: 16px;
-  background-color: var(--gray700);
+  background: rgba(255, 255, 255, 0.12);
   display: flex;
   align-items: center;
   padding: 0 24px;
@@ -205,10 +249,11 @@ const Fixed = styled(motion.div)`
   position: fixed;
   bottom: 64px;
   left: 0;
+  z-index: 3;
 `
 const Frame = styled.div`
   display: flex;
   flex-direction: column;
   padding: 40px 0 160px;
-  min-height: 68vh;
+  height: 100%;
 `
