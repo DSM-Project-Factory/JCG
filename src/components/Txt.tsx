@@ -20,6 +20,7 @@ export const Txt = ({ typography = 'p3', color = '--white', clickable = false, l
         lineHeight: lineHeight,
         cursor: clickable ? 'pointer' : 'auto',
         pointerEvents: 'none',
+        wordBreak: 'keep-all',
         ...TYPOGRAPHY[typography],
       }}
       {...props}

@@ -11,7 +11,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<Layout footer />}>
+        <Route element={<Layout footer header />}>
           <Route path="/" element={<Main />} />
           <Route path="/english">
             <Route path="" element={<English />} />

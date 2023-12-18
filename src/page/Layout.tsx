@@ -2,10 +2,10 @@ import styled from '@emotion/styled'
 import { Outlet } from 'react-router-dom'
 import { Header, Footer } from 'components'
 
-const Layout = ({ footer }: { footer?: boolean }) => {
+const Layout = ({ footer, header }: { footer?: boolean; header?: boolean }) => {
   return (
     <Background footer={!!footer}>
-      <Header />
+      {header && <Header />}
       <ContentSection>
         <Outlet />
       </ContentSection>

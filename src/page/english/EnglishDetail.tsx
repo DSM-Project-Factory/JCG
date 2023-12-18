@@ -114,6 +114,40 @@ const EnglishDetail = () => {
       <DropFilter />
       {grade && id && <BackImg url={englishData[+grade - 1][+id - 1].img} />}
       <div css={{ zIndex: 3 }}>
+        <Statistics>
+          <Item>
+            <Txt typography="h3" css={{ color: 'rgba(255, 255, 255, 0.4)' }}>
+              Score
+            </Txt>
+            <Txt typography="h3" color="--white">
+              {score}
+            </Txt>
+          </Item>
+          <Item>
+            <Txt typography="h3" css={{ color: 'rgba(255, 255, 255, 0.4)' }}>
+              Combo
+            </Txt>
+            <Txt typography="h3" color="--white">
+              {combo}
+            </Txt>
+          </Item>
+          <Item>
+            <Txt typography="h3" css={{ color: 'rgba(255, 255, 255, 0.4)' }}>
+              Max Combo
+            </Txt>
+            <Txt typography="h3" color="--white">
+              {maxCombo}
+            </Txt>
+          </Item>
+          <Item>
+            <Txt typography="h3" css={{ color: 'rgba(255, 255, 255, 0.4)' }}>
+              PERFECT
+            </Txt>
+            <Txt typography="h3" color="--white">
+              {perfect}
+            </Txt>
+          </Item>
+        </Statistics>
         <div css={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
           <motion.div
             initial="hidden"
@@ -129,14 +163,14 @@ const EnglishDetail = () => {
             </Txt>
           </motion.div>
           <div css={{ display: 'flex', gap: '8px' }}>
-            <Button css={{ background: isWord ? 'var(--green700)' : 'var(--gray700)' }} onClick={() => setIsWord(true)}>
-              <Txt>단어</Txt>
+            <Button css={{ background: isWord ? 'white' : 'rgba(255, 255, 255, 0.2)' }} onClick={() => setIsWord(true)}>
+              <Txt color={isWord ? '--black' : '--gray400'}>단어</Txt>
             </Button>
             <Button
-              css={{ background: !isWord ? 'var(--green700)' : 'var(--gray700)' }}
+              css={{ background: !isWord ? 'white' : 'rgba(255, 255, 255, 0.2)' }}
               onClick={() => setIsWord(false)}
             >
-              <Txt>뜻</Txt>
+              <Txt color={!isWord ? '--black' : '--gray400'}>뜻</Txt>
             </Button>
           </div>
         </div>
@@ -151,17 +185,6 @@ const EnglishDetail = () => {
             {isWord ? data?.[index].word : data?.[index].meaning.map(txt => txt).join(', ')}
           </Txt>
         </div>
-        <Txt typography="p4">
-          Score: <Txt color="--green500">{score}</Txt>
-        </Txt>
-        <Txt typography="p4">
-          Combo: <Txt color="--green500">{combo}</Txt> &nbsp; | &nbsp; Max Combo:{' '}
-          <Txt color="--green500">{maxCombo}</Txt>
-        </Txt>
-        <br />
-        <Txt typography="p4">
-          PERFECT: <Txt color="--green500">{perfect}</Txt>
-        </Txt>
         <Txt>{show && (isWord ? data?.[index].meaning.map(txt => txt).join(', ') : data?.[index].word)}</Txt>
       </div>
       <Fixed initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
@@ -188,6 +211,21 @@ const Loading = keyframes`
   100% {
     background-position: 0% 50%;
   }
+`
+const Item = styled.div`
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 12px 24px;
+`
+const Statistics = styled.div`
+  display: flex;
+  width: 100%;
+  gap: 12px;
+  margin-bottom: 40px;
 `
 const DropFilter = styled.div`
   position: fixed;
@@ -230,14 +268,14 @@ const Input = styled.input`
   }
 
   ::placeholder {
-    color: rgba(255, 255, 255, 0.52);
+    color: rgba(255, 255, 255, 0.40);
   }
 `
 const InputFrame = styled.div`
   width: calc(1000px - 48px);
   height: 52px;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.08);
   display: flex;
   align-items: center;
   padding: 0 24px;
